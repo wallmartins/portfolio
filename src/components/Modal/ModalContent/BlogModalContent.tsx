@@ -1,7 +1,7 @@
 import React from "react";
 
 const BlogModalContent = () => {
-  return <div className="text-black">BlogModalContent</div>;
+  return <div className="text-[#c0cbcd]">Coming soon...</div>;
 };
 
 export default BlogModalContent;

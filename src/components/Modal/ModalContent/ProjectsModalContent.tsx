@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProjectsModalContent = () => {
-  return <div>ProjectsModalContent</div>;
+  return <div className="text-[#c0cbcd]">Coming soon...</div>;
 };
 
 export default ProjectsModalContent;
