@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.font-title {
+  font-family: var(--font-rubik-glitch);
+}
+
+.font-button {
+  font-family: var(--font-syne-mono);
+}
+
+.font-body {
+  font-family: var(--font-baumans);
+}
