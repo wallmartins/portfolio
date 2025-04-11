@@ -121,7 +121,7 @@ const ModalManager = () => {
   return (
     <>
       <Sidebar items={sidebarItems} onItemClick={openModal} />
-      {openModals.map((modal, index) => {
+      {openModals.map((modal) => {
         const offset = 80;
 
         const x =
