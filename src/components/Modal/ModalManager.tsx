@@ -22,10 +22,14 @@ import { GoGear } from "react-icons/go";
 import { IoMusicalNotesOutline } from "react-icons/io5";
 import { PiBookOpenTextThin } from "react-icons/pi";
 import { TfiGallery } from "react-icons/tfi";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { IoDocumentAttachOutline } from "react-icons/io5";
 
 import Sidebar from "../Sidebars/Sidebar";
 import { ISidebarItem } from "@/types/sidebar";
 import DraggableWrapper from "../Draggable/DraggableWrapper";
+import ExperienceModalContent from "./ModalContent/ExperienceModalContent";
+import DownloadCV from "../DownloadCV";
 
 const ModalManager = () => {
   const sidebarItems: ISidebarItem[] = [
@@ -41,6 +45,13 @@ const ModalManager = () => {
       title: "Projects",
       content: <ProjectsModalContent />,
       icon: <FaRegFolderOpen />,
+      side: "left",
+    },
+    {
+      id: "experience",
+      title: "Experiences",
+      content: <ExperienceModalContent />,
+      icon: <BsPersonWorkspace />,
       side: "left",
     },
     {
@@ -83,6 +94,13 @@ const ModalManager = () => {
       title: "Gallery",
       content: <GalleryModalContent />,
       icon: <TfiGallery />,
+      side: "right",
+    },
+    {
+      id: "cv",
+      title: "Download CV",
+      content: <DownloadCV />,
+      icon: <IoDocumentAttachOutline />,
       side: "right",
     },
   ];
