@@ -107,8 +107,7 @@ const ModalManager = () => {
 
     setOpenModals((prev) => {
       if (prev.some((modal) => modal.id === item.id)) {
-        closeModal(item.id);
-        return prev;
+        return prev.filter((modal) => modal.id !== item.id);
       }
       return [...prev, modalWithPosition];
     });
