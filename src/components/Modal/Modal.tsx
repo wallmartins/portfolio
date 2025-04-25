@@ -31,7 +31,7 @@ const Modal = ({ title, children, onClose, side }: IModalProps) => {
           <IoIosClose />
         </button>
       </div>
-      <div className="bg-[rgb(9,1,13)] h-[512px] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-4">
+      <div className="bg-[rgb(9,1,13)] h-fit p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-4">
         {children}
       </div>
     </motion.div>
