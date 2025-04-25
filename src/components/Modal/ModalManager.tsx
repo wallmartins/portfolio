@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 
 // CONTENT
-import ServicesModalContent from "./ModalContent/ServicesModalContent";
+import ServicesModalContent from "./ModalContent/Services/ServicesModalContent";
 import ProjectsModalContent from "./ModalContent/ProjectsModalContent";
 import BlogModalContent from "./ModalContent/BlogModalContent";
 import ContactModalContent from "./ModalContent/ContactModalContent";

@@ -18,7 +18,7 @@ const Modal = ({ title, children, onClose, side }: IModalProps) => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -10, scale: 0.95 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`${positionClass} absolute w-lg h-fit bg-[#0d1220]/50 hover:bg-[#181d2c]/50 backdrop-blur-sm border border-white/5 hover:border-white/10 transition-colors duration-500 ease-in-out shadow-md rounded-lg z-50 p-4 drag-handle cursor-grab`}
+      className={`${positionClass} absolute w-2xl h-fit bg-[#0d1220]/50 hover:bg-[#181d2c]/50 backdrop-blur-sm border border-white/5 hover:border-white/10 transition-colors duration-500 ease-in-out shadow-md rounded-lg z-50 p-4 drag-handle cursor-grab`}
     >
       <div className="flex flex-1 items-center justify-between">
         <p className="font-button text-[#c0cbcd] text-left text-sm">{title}</p>
@@ -29,7 +29,7 @@ const Modal = ({ title, children, onClose, side }: IModalProps) => {
           <IoIosClose />
         </button>
       </div>
-      <div className="bg-[rgb(9,1,13)] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-4">
+      <div className="bg-[rgb(9,1,13)] h-[512px] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-4 overflow-y-scroll custom-scrollbar">
         {children}
       </div>
     </motion.div>

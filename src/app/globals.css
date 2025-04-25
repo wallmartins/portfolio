@@ -19,3 +19,22 @@ body::-webkit-scrollbar {
 .font-body {
   font-family: var(--font-baumans);
 }
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #181d2c #09010d;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #09010d;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #181d2c;
+  border-radius: 6px;
+  border: 2px solid #09010d;
+}
