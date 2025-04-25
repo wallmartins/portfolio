@@ -186,7 +186,7 @@ const ToolsModalContent = () => {
   ];
 
   return (
-    <div className="w-[280px] space-y-2 overflow-y-scroll custom-scrollbar">
+    <div className="w-[280px] h-[512px] space-y-2 overflow-y-scroll custom-scrollbar">
       {tools.map((tool, index) => (
         <a
           key={`tools-${index}`}
