@@ -4,7 +4,7 @@ const MusicModalContent = () => {
   return (
     <iframe
       style={{ borderRadius: "12px" }}
-      src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1IPOOk?utm_source=generator&theme=0"
+      src="https://open.spotify.com/embed/album/5t78IIG7tiWQ9RUYApAJFG?utm_source=generator"
       width="100%"
       height="512"
       frameBorder="0"
