@@ -187,7 +187,7 @@ const ToolsModalContent = () => {
   ];
 
   return (
-    <div className="w-[352px] space-y-2">
+    <div className="w-[280px] space-y-2">
       {tools.map((tool, index) => (
         <a
           key={`tools-${index}`}
