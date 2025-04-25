@@ -103,7 +103,7 @@ const ServicesModalContent = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2">
+    <div className="w-2xl grid grid-cols-2">
       {services.map((service, index) => (
         <ServicesComponents
           key={`servicesComponent-${index}`}
