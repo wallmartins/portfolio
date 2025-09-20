@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 
 // CONTENT
-import ServicesModalContent from "./ModalContent/ServicesModalContent";
+import ServicesModalContent from "./ModalContent/Services/ServicesModalContent";
 import ProjectsModalContent from "./ModalContent/ProjectsModalContent";
 import BlogModalContent from "./ModalContent/BlogModalContent";
 import ContactModalContent from "./ModalContent/ContactModalContent";
@@ -28,7 +28,7 @@ import { IoDocumentAttachOutline } from "react-icons/io5";
 import Sidebar from "../Sidebars/Sidebar";
 import { ISidebarItem } from "@/types/sidebar";
 import DraggableWrapper from "../Draggable/DraggableWrapper";
-import ExperienceModalContent from "./ModalContent/ExperienceModalContent";
+import ExperienceModalContent from "./ModalContent/Experiences/ExperienceModalContent";
 import DownloadCV from "../DownloadCV";
 
 const ModalManager = () => {
