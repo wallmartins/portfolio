@@ -17,85 +17,85 @@ import ServicesComponents from "./ServicesComponents";
 const ServicesModalContent = () => {
   const services = [
     {
-      title: "💻 Desenvolvimento Web",
+      title: "Desenvolvimento Web",
       description:
         "Construção de sites e apps rápidos, responsivos e prontos pra qualquer dispositivo.",
       icon: <FaLaptopCode />,
     },
     {
-      title: "🎯 Landing Pages",
+      title: "Landing Pages",
       description:
         "Páginas pensadas para conversão, captação de leads e performance nas campanhas.",
       icon: <FiTarget />,
     },
     {
-      title: "⚙️ Integração com APIs",
+      title: "Integração com APIs",
       description:
         "Conexão com bancos de dados, CRMs, ferramentas externas e tudo que seu sistema precisar.",
       icon: <AiOutlineApi />,
     },
     {
-      title: "🧩 Componentização e Design System",
+      title: "Design System",
       description:
         "Criação de componentes reutilizáveis com visual consistente e fácil manutenção.",
       icon: <FaPuzzlePiece />,
     },
     {
-      title: "📈 Performance e SEO Técnico",
+      title: "Performance e SEO",
       description:
         "Otimizações que garantem velocidade de carregamento e destaque nos buscadores.",
       icon: <RiBarChartBoxLine />,
     },
     {
-      title: "🔐 Autenticação e Segurança",
+      title: "Autenticação e Segurança",
       description:
         "Login, cadastro e controle de acesso com foco em usabilidade e proteção de dados.",
       icon: <HiOutlineLockClosed />,
     },
     {
-      title: "🤖 Chatbots e Automação",
+      title: "Chatbots e Automação",
       description:
         "Integrações com bots, WhatsApp e soluções que agilizam a comunicação com clientes.",
       icon: <TbRobot />,
     },
     {
-      title: "🛠️ Refatoração de Código",
+      title: "Refatoração de Código",
       description:
         "Melhoria de sistemas existentes com foco em performance, legibilidade e escalabilidade.",
       icon: <FiTool />,
     },
     {
-      title: "🧠 Integração com IA",
+      title: "Integração com IA",
       description:
         "Uso de APIs como OpenAI, Google e Hugging Face para adicionar inteligência ao seu sistema.",
       icon: <GiArtificialHive />,
     },
     {
-      title: "🤖 Chatbots Inteligentes",
+      title: "Chatbots Inteligentes",
       description:
         "Criação de bots que entendem contexto, respondem com naturalidade e economizam tempo da sua equipe.",
       icon: <SiDialogflow />,
     },
     {
-      title: "📄 Geração de Conteúdo Automatizado",
+      title: "Conteúdo Automatizado",
       description:
         "Textos, descrições, resumos e respostas automáticas criados com IA.",
       icon: <MdOutlineTextSnippet />,
     },
     {
-      title: "🔍 Busca Inteligente com IA",
+      title: "Busca Inteligente com IA",
       description:
         "Resultados mais relevantes com interpretação de linguagem natural.",
       icon: <BiSearchAlt2 />,
     },
     {
-      title: "🗂️ Classificação e Organização de Dados",
+      title: "Data Management",
       description:
         "Categorize e organize informações com inteligência artificial.",
       icon: <VscFolderLibrary />,
     },
     {
-      title: "🧩 Customização de IA para Negócios",
+      title: "IA para Negócios",
       description:
         "Soluções com IA generativa e machine learning adaptadas para sua necessidade.",
       icon: <CgSmartHomeBoiler />,
@@ -103,7 +103,7 @@ const ServicesModalContent = () => {
   ];
 
   return (
-    <div>
+    <div className="w-2xl h-[512px] grid grid-cols-2 overflow-y-scroll custom-scrollbar">
       {services.map((service, index) => (
         <ServicesComponents
           key={`servicesComponent-${index}`}

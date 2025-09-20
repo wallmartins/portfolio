@@ -8,7 +8,7 @@ const DownloadCV = () => {
       download
       target="_blank"
       rel="noopener noreferrer"
-      className="text-[#c0cbcd] px-4 py-2 rounded-lg text-center"
+      className="text-[#c0cbcd] px-4 py-2 rounded-lg text-center w-3xs"
     >
       <div className="flex flex-col items-center gap-3">
         <GrDocumentPdf size={20} />

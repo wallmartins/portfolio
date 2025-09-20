@@ -84,7 +84,7 @@ const ModalManager = () => {
     },
     {
       id: "books",
-      title: "Books",
+      title: "Book",
       content: <BookModalContent />,
       icon: <PiBookOpenTextThin />,
       side: "right",
