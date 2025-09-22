@@ -7,12 +7,8 @@ const experiences: ExperienceCardProps[] = [
     experienceDate: { startDate: "Abr 2025", endDate: "Atualmente" },
     jobTitle: "Engenheiro de Software Sênior",
     companyName: "Cielo",
-    description: `
-      • Liderei a migração e implementação de um sistema de descomissionamento, gerando economia de 5 milhões.  
-      • Contribuí para a integração de um chat com IA, reduzindo em 70% os chamados de suporte.  
-      • Desenvolvi um sistema de entrega automática de relatórios recorrentes, melhorando a experiência do cliente e a eficiência operacional.  
-      • Aumentei a qualidade do código nos projetos, alcançando mais de 80% de cobertura.  
-    `,
+    description:
+      "Na Cielo, atuei na migração e implementação de um sistema de descomissionamento que gerou economia de 5 milhões, além de contribuir para a integração de um chat com IA que reduziu em 70% os chamados de suporte. Também participei do desenvolvimento de um sistema automatizado de entrega de relatórios recorrentes, trazendo mais autonomia para os clientes, e, junto ao time, atuamos na elevação da qualidade do código a um patamar superior, com mais de 90% de cobertura em todos os projetos.",
     techs: [
       "React",
       "Styled-Components",
@@ -23,16 +19,14 @@ const experiences: ExperienceCardProps[] = [
       "Amazon Lex",
       "MongoDB",
     ],
+    location: "Barueri - SP",
   },
   {
     experienceDate: { startDate: "Set 2024", endDate: "Jan 2025" },
     jobTitle: "Desenvolvedor Full Stack",
     companyName: "Trend Soluções em Atendimento",
-    description: `
-      • Desenvolvi telas de configuração para disparo de mensagens e atendimento ao cliente via Webhook e WhatsApp.  
-      • Implementei a infraestrutura de backend conectando sistemas de webhook.  
-      • Melhorei o dashboard com visualizações de dados avançadas.  
-    `,
+    description:
+      "Atuei no desenvolvimento de telas de configuração para disparo de mensagens e atendimento via Webhook e WhatsApp, além de implementar a infraestrutura de backend que conectava os sistemas de forma eficiente. Também contribuí para tornar os dashboards mais visuais e interativos, elevando a experiência de análise de dados para os usuários.",
     techs: [
       "Vue.js",
       "Node.js",
@@ -42,43 +36,40 @@ const experiences: ExperienceCardProps[] = [
       "NestJS",
       "Postgresql",
     ],
+    location: "Distrito Federal - Brasilia",
   },
   {
     experienceDate: { startDate: "Jun 2021", endDate: "Nov 2024" },
     jobTitle: "Desenvolvedor Front-End",
     companyName: "Locaweb",
-    description: `
-      • Liderei o desenvolvimento frontend do sistema de campanhas no WhatsApp, aumentando o engajamento dos usuários em 30%.  
-      • Desenvolvi um sistema de login flexível que solucionou problemas de registro.  
-      • Otimizei desempenho, escalabilidade e tempo de carregamento.  
-    `,
+    description:
+      "Fui responsável pelo frontend do sistema de campanhas no WhatsApp, que se tornou um dos carros-chefe da empresa, aumentando em 30% o engajamento dos usuários. Além disso, criei um sistema de login flexível que solucionou falhas de registro e otimizei o desempenho da plataforma, garantindo maior escalabilidade e carregamento mais rápido.",
     techs: ["Vue.js", "JavaScript", "TypeScript", "CSS3", "Node.js"],
+    location: "São Paulo - SP",
   },
   {
     experienceDate: { startDate: "Jan 2021", endDate: "Jun 2021" },
     jobTitle: "Desenvolvedor Front-End",
     companyName: "Trampolim Project",
-    description: `
-      • Aumentei a visibilidade dos autores criando um site responsivo.  
-      • Estruturei uma arquitetura sustentável e uma galeria de fotos.  
-    `,
+    description:
+      "No Trampolim Project, desenvolvi um site responsivo que aumentou a visibilidade dos autores, além de estruturar uma arquitetura sustentável e implementar uma galeria de fotos funcional e de fácil manutenção.",
     techs: ["React", "JavaScript", "CSS3", "HTML"],
+    location: "São Paulo - SP",
   },
   {
     experienceDate: { startDate: "Mai 2020", endDate: "Dez 2023" },
     jobTitle: "Desenvolvedor Front-End",
     companyName: "Porão Network",
-    description: `
-      • Aumentei em 60% a interação do público com uma interface de jogo integrada à Twitch.  
-      • Criei experiências responsivas para web e Twitch.  
-    `,
+    description:
+      " Trabalhei no desenvolvimento de interfaces para web e Twitch, criando experiências responsivas e interativas. Um dos destaques foi a implementação de uma interface de jogo integrada à Twitch, que aumentou em 60% a interação do público com o conteúdo.",
     techs: ["React", "JavaScript", "CSS3", "HTML", "Typescript"],
+    location: "São Paulo - SP",
   },
 ];
 
 const ExperienceModalContent = () => {
   return (
-    <>
+    <div className="w-2xl h-[512px] overflow-y-scroll custom-scrollbar">
       {experiences.map((experience, index) => (
         <ExperienceCard
           key={`experienceComponent-${index}`}
@@ -87,9 +78,10 @@ const ExperienceModalContent = () => {
           companyName={experience.companyName}
           description={experience.description}
           techs={experience.techs}
+          location={experience.location}
         />
       ))}
-    </>
+    </div>
   );
 };
 

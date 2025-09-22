@@ -9,4 +9,5 @@ export interface ExperienceCardProps {
   companyName: string;
   description: string;
   techs: string[];
+  location: string;
 }
