@@ -94,11 +94,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    let body: any;
+    let body: ContactData;
     try {
       body = await request.json();
     } catch (error) {
-      return NextResponse.json({ error: "JSON inválido" }, { status: 400 });
+      return NextResponse.json(
+        { error: `JSON inválido, ${error}` },
+        { status: 400 }
+      );
     }
 
     if (typeof body !== "object" || body === null) {
@@ -131,12 +134,6 @@ export async function POST(request: NextRequest) {
     const sanitizedName = sanitizeInput(name);
     const sanitizedEmail = sanitizeInput(email);
     const sanitizedMessage = sanitizeInput(message);
-
-    console.log("📝 Dados recebidos para validação:", {
-      name: sanitizedName,
-      email: sanitizedEmail,
-      messageLength: sanitizedMessage.length,
-    });
 
     const validationErrors: string[] = [];
 

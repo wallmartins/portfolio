@@ -56,7 +56,10 @@ const ContactCard: React.FC = () => {
         setMessage({ text: errorMessage, type: "error" });
       }
     } catch (error) {
-      setMessage({ text: "Erro de conexão com o servidor", type: "error" });
+      setMessage({
+        text: `Erro de conexão com o servidor, ${error}`,
+        type: "error",
+      });
     } finally {
       setIsLoading(false);
     }
