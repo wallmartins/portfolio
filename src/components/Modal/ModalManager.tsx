@@ -5,9 +5,9 @@ import Modal from "./Modal";
 
 // CONTENT
 import ServicesModalContent from "./ModalContent/Services/ServicesModalContent";
-import ProjectsModalContent from "./ModalContent/ProjectsModalContent";
+import ProjectsModalContent from "./ModalContent/Projects/ProjectsModalContent";
 import BlogModalContent from "./ModalContent/BlogModalContent";
-import ContactModalContent from "./ModalContent/ContactModalContent";
+import ContactModalContent from "./ModalContent/Contact/ContactModalContent";
 import ToolsModalContent from "./ModalContent/ToolsModalContent";
 import MusicModalContent from "./ModalContent/MusicModalContent";
 import BookModalContent from "./ModalContent/BookModalContent";
@@ -28,7 +28,7 @@ import { IoDocumentAttachOutline } from "react-icons/io5";
 import Sidebar from "../Sidebars/Sidebar";
 import { ISidebarItem } from "@/types/sidebar";
 import DraggableWrapper from "../Draggable/DraggableWrapper";
-import ExperienceModalContent from "./ModalContent/ExperienceModalContent";
+import ExperienceModalContent from "./ModalContent/Experiences/ExperienceModalContent";
 import DownloadCV from "../DownloadCV";
 
 const ModalManager = () => {
