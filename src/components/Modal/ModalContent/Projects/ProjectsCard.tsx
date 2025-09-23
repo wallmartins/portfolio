@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/Badge/Badge";
 import { ProjectCardProps } from "@/types/project";
 import Link from "next/link";

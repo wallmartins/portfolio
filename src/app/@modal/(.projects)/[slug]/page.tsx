@@ -3,11 +3,11 @@
 import Modal from "@/components/Modal/Modal";
 import ProjectDetail from "@/components/ProjectDetail/ProjectDetail";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface ProjectModalProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 interface Project {
@@ -45,11 +45,15 @@ const projectsData: ProjectsData = {
 
 export default function ProjectModal({ params }: ProjectModalProps) {
   const router = useRouter();
-  const project = projectsData[params.slug];
+  const [project, setProject] = useState<Project | null>(null);
 
-  if (!project) {
-    return null;
-  }
+  useEffect(() => {
+    params.then((resolvedParams) => {
+      setProject(projectsData[resolvedParams.slug] || null);
+    });
+  }, [params]);
+
+  if (!project) return null;
 
   const handleClose = () => {
     router.back();

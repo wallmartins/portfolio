@@ -68,8 +68,12 @@ const projectsData: ProjectsData = {
   },
 };
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projectsData[params.slug];
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const project = projectsData[(await params).slug];
 
   if (!project) {
     redirect("/");
