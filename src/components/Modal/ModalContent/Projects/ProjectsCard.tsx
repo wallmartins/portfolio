@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/Badge/Badge";
 import { ProjectCardProps } from "@/types/project";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
@@ -17,10 +18,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div className="flex items-center cursor-pointer border-b-2 border-b-[#181d2c] pb-1 pt-1 first:pt-0 last:border-0">
       {/* Image Section */}
       <div className="w-32 h-24 flex-shrink-0">
-        <img
+        <Image
           className="w-full h-full object-cover"
           src={imageUrl}
           alt={title}
+          width={400}
+          height={500}
         />
       </div>
 
