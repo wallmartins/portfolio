@@ -6,8 +6,15 @@ import DraggableWrapper from "./Draggable/DraggableWrapper";
 
 const About = () => {
   return (
-    <DraggableWrapper initialX={"45%"} initialY={110}>
-      <div className="w-lg h-fit bg-[#0d1220]/50 hover:bg-[#181d2c]/50 backdrop-blur-sm border border-white/5 hover:border-white/10 transition-colors duration-500 ease-in-out shadow-md rounded-lg z-50 p-4 drag-handle cursor-grab">
+    <DraggableWrapper
+      centered
+      responsive
+      widthPercentage={50}
+      heightPercentage={20}
+      maxWidth={490}
+      minHeight={550}
+    >
+      <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4">
         <p className="font-button text-[#c0cbcd] text-left text-sm">About</p>
         <div className="bg-[rgb(9,1,13)] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-4">
           <Image

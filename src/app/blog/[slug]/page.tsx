@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ModalManager from "@/components/Modal/ModalManager";
 import DraggableWrapper from "@/components/Draggable/DraggableWrapper";
 import BlogDetail from "@/components/BlogDetail/BlogDetail";
+import Menu from "@/components/Menu/Menu";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -32,6 +33,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       </DraggableWrapper>
+      <Menu />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import DraggableWrapper from "@/components/Draggable/DraggableWrapper";
+import Menu from "@/components/Menu/Menu";
 import ModalManager from "@/components/Modal/ModalManager";
 import ProjectDetail from "@/components/ProjectDetail/ProjectDetail";
 import { redirect } from "next/navigation";
@@ -101,6 +102,7 @@ export default async function ProjectPage({
           </div>
         </div>
       </DraggableWrapper>
+      <Menu />
     </div>
   );
 }
