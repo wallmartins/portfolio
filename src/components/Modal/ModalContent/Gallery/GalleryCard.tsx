@@ -34,7 +34,7 @@ export default function GalleryCard({ images }: GalleryCardProps) {
         spaceBetween={20}
         slidesPerView={1}
         speed={500}
-        className="rounded-2xl h-96 custom-gallery"
+        className="rounded-2xl h-128 custom-gallery"
       >
         {images.map((img, i) => (
           <SwiperSlide key={i}>
