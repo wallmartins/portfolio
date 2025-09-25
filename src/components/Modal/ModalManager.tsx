@@ -6,12 +6,12 @@ import Modal from "./Modal";
 // CONTENT
 import ServicesModalContent from "./ModalContent/Services/ServicesModalContent";
 import ProjectsModalContent from "./ModalContent/Projects/ProjectsModalContent";
-import BlogModalContent from "./ModalContent/BlogModalContent";
+import BlogModalContent from "./ModalContent/Blog/BlogModalContent";
 import ContactModalContent from "./ModalContent/Contact/ContactModalContent";
 import ToolsModalContent from "./ModalContent/ToolsModalContent";
 import MusicModalContent from "./ModalContent/MusicModalContent";
 import BookModalContent from "./ModalContent/BookModalContent";
-import GalleryModalContent from "./ModalContent/GalleryModalContent";
+import GalleryModalContent from "./ModalContent/Gallery/GalleryModalContent";
 
 // ICONS
 import { MdOutlineComputer } from "react-icons/md";

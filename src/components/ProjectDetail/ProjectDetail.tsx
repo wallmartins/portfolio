@@ -31,9 +31,6 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
         )}
       </div>
 
-      {/* Subtítulo */}
-      <p className="font-body text-sm text-justify">{project.subtitle}</p>
-
       {/* Grid de Informações */}
       <div className="grid gap-4">
         {/* Tecnologias */}
