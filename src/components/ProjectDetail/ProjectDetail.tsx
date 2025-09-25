@@ -4,7 +4,7 @@ import { Badge } from "../Badge/Badge";
 interface Project {
   title: string;
   subtitle: string;
-  gif: string;
+  gif?: string;
   challenges: string[];
   goals: string[];
   results: string[];
@@ -19,18 +19,17 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="flex flex-col gap-4">
       <div className="relative">
-        <Image
-          src={project.gif}
-          width={400}
-          height={225}
-          alt={`Demonstração do projeto ${project.title}`}
-          className="rounded-sm shadow-md w-full"
-          unoptimized={true}
-        />
+        {project.gif && (
+          <Image
+            src={project.gif}
+            width={400}
+            height={225}
+            alt={`Demonstração do projeto ${project.title}`}
+            className="rounded-sm shadow-md w-full"
+            unoptimized={true}
+          />
+        )}
       </div>
-
-      {/* Subtítulo */}
-      <p className="font-body text-sm text-justify">{project.subtitle}</p>
 
       {/* Grid de Informações */}
       <div className="grid gap-4">

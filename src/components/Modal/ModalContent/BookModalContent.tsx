@@ -8,8 +8,10 @@ const BookModalContent = () => {
     <div className="w-[280px] flex flex-col justify-center">
       <div className="rounded-md overflow-hidden shadow-md mb-4 flex justify-center">
         <Image
-          src="book.jpg"
+          src="/book.jpg"
           alt="Book Cover"
+          width={600}
+          height={600}
           className="w-[97%] bg-transparent object-cover rounded-md"
         />
       </div>
