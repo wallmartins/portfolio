@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ContactFormData {
   name: string;
@@ -12,6 +13,7 @@ const ContactCard: React.FC = () => {
     email: "",
     message: "",
   });
+  const { t } = useTranslation();
 
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState({ text: "", type: "" });
@@ -43,7 +45,7 @@ const ContactCard: React.FC = () => {
 
       if (response.ok) {
         setMessage({
-          text: data.message || "Mensagem enviada com sucesso!",
+          text: data.message || t("messageSent"),
           type: "success",
         });
         setFormData({ name: "", email: "", message: "" });
@@ -51,13 +53,13 @@ const ContactCard: React.FC = () => {
         // Mostrar erros detalhados do backend
         const errorMessage = data.details
           ? `${data.error}: ${data.details.join(", ")}`
-          : data.error || "Erro ao enviar mensagem";
+          : data.error || t("messageError");
 
         setMessage({ text: errorMessage, type: "error" });
       }
     } catch (error) {
       setMessage({
-        text: `Erro de conexão com o servidor, ${error}`,
+        text: `${t("serverError")}, ${error}`,
         type: "error",
       });
     } finally {
@@ -67,12 +69,8 @@ const ContactCard: React.FC = () => {
 
   return (
     <div className="w-full mx-auto p-6 text-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-title mb-2">Bora conversar?</h2>
-      <p className="mb-6 text-gray-400 font-body">
-        Adoraria receber sua mensagem! Seja para falar sobre um projeto, tirar
-        dúvidas sobre meus serviços ou só para dar um oi, fique à vontade para
-        me contatar pelo formulário abaixo.
-      </p>
+      <h2 className="text-2xl font-title mb-2">{t("letsTalk")}</h2>
+      <p className="mb-6 text-gray-400 font-body">{t("contactDescription")}</p>
 
       {message.text && (
         <div
@@ -91,7 +89,7 @@ const ContactCard: React.FC = () => {
           <input
             type="text"
             name="name"
-            placeholder="Nome"
+            placeholder={t("name")}
             value={formData.name}
             onChange={handleChange}
             className="w-1/2 p-3 bg-[#181d2c] border border-[#181d2c] rounded focus:outline-none focus:ring-2 focus:ring-[#2a334d]"
@@ -111,7 +109,7 @@ const ContactCard: React.FC = () => {
         </div>
         <textarea
           name="message"
-          placeholder="Mensagem"
+          placeholder={t("message")}
           value={formData.message}
           onChange={handleChange}
           className="w-full p-3 bg-[#181d2c] border border-[#181d2c] rounded h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#2a334d]"
@@ -123,7 +121,7 @@ const ContactCard: React.FC = () => {
           disabled={isLoading}
           className="w-full bg-[#181d2c] hover:bg-[#2a334d] text-white font-semibold py-3 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isLoading ? "Enviando..." : "Enviar"}
+          {isLoading ? t("sending") : t("send")}
         </button>
       </form>
     </div>

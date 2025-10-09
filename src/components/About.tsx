@@ -3,8 +3,10 @@
 import Image from "next/image";
 import React from "react";
 import DraggableWrapper from "./Draggable/DraggableWrapper";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <DraggableWrapper
       centered
@@ -12,7 +14,7 @@ const About = () => {
       widthPercentage={50}
       heightPercentage={20}
       maxWidth={490}
-      minHeight={550}
+      minHeight={720}
     >
       <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4">
         <p className="font-button text-[#c0cbcd] text-left text-sm">About</p>
@@ -26,16 +28,10 @@ const About = () => {
             className="rounded-sm shadow-md"
           />
           <h2 className="font-title text-2xl text-[#c0cbcd]">
-            Codificando Realidades Digitais que Revolucionam
+            {t("heroTitle")}
           </h2>
-          <p className="font-body text-sm text-[#99a2a4] text-justify">
-            Sou um desenvolvedor especializado em transformar ideias em
-            experiências digitais que unem elegância e impacto real - com código
-            limpo, interfaces intuitivas e uma obsessão por detalhes. Crio
-            soluções que não apenas funcionam perfeitamente, mas encantam
-            usuários e impulsionam resultados de negócios, porque acredito que a
-            verdadeira excelência técnica está em entregar produtos que são tão
-            funcionais quanto memoráveis.
+          <p className="font-body text-sm text-[#99a2a4] text-justify whitespace-pre-line">
+            {t("heroDescription")}
           </p>
         </div>
       </div>

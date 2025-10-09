@@ -1,0 +1,68 @@
+{
+  "heroTitle": "Codificando Realidades Digitais que Revolucionam",
+  "heroDescription": "Desde cedo descobri que a tecnologia poderia ser mais do que linhas de código: ela pode transformar ideias em experiências que marcam pessoas. Comecei criando sites para escolas da minha cidade, e dali em diante nunca mais parei de buscar formas de unir criatividade e técnica para resolver problemas reais. \nHoje, atuo como desenvolvedor especializado em construir interfaces que não apenas funcionam com eficiência, mas também encantam usuários e geram impacto para os negócios. Minha obsessão pelos detalhes se traduz em soluções limpas, intuitivas e escaláveis, que ajudam empresas a crescer e se destacar no digital. \nAcredito que cada projeto é uma oportunidade de contar uma história – e o meu papel é garantir que essa história seja lembrada, seja pela fluidez da experiência, pela estética ou pelo resultado que entrega. Se a sua ideia precisa de vida, performance e propósito, eu posso ajudar a torná-la realidade.",
+  "projectDemo": "Demonstração do projeto",
+  "technologiesUsed": "Tecnologias utilizadas",
+  "challenges": "Desafios",
+  "goals": "Metas",
+  "results": "Resultados",
+  "services": "Serviços",
+  "projectsLabel": "Projetos",
+  "experiencesLabel": "Experiências",
+  "blog": "Blog",
+  "contact": "Contato",
+  "tools": "Ferramentas",
+  "music": "Música",
+  "book": "Livro",
+  "gallery": "Galeria",
+  "downloadResume": "Baixar Currículo",
+  "name": "Nome",
+  "message": "Mensagem",
+  "sending": "Enviando...",
+  "send": "Enviar",
+  "contactDescription": "Adoraria receber sua mensagem! Seja para falar sobre um projeto, tirar dúvidas sobre meus serviços ou só para dar um oi, fique à vontade para me contatar pelo formulário abaixo.",
+  "letsTalk": "Bora conversar?",
+  "messageSent": "Mensagem enviada com sucesso!",
+  "messageError": "Erro ao enviar mensagem",
+  "serverError": "Erro de conexão com o servidor",
+  "downloadPDF": "Clique aqui para fazer o download do PDF",
+  "available": "Disponível",
+  "experiences": [
+    {
+      "experienceDate": { "startDate": "Abr 2025", "endDate": "Atualmente" },
+      "jobTitle": "Engenheiro de Software Sênior",
+      "description": "Na Cielo, atuei na migração e implementação de um sistema de descomissionamento que gerou economia de 5 milhões, além de contribuir para a integração de um chat com IA que reduziu em 70% os chamados de suporte. Também participei do desenvolvimento de um sistema automatizado de entrega de relatórios recorrentes, trazendo mais autonomia para os clientes, e, junto ao time, atuamos na elevação da qualidade do código a um patamar superior, com mais de 90% de cobertura em todos os projetos.",
+      "location": "Barueri - SP"
+    },
+    {
+      "experienceDate": { "startDate": "Set 2024", "endDate": "Jan 2025" },
+      "jobTitle": "Desenvolvedor Full Stack",
+      "description": "Atuei no desenvolvimento de telas de configuração para disparo de mensagens e atendimento via Webhook e WhatsApp, além de implementar a infraestrutura de backend que conectava os sistemas de forma eficiente. Também contribuí para tornar os dashboards mais visuais e interativos, elevando a experiência de análise de dados para os usuários.",
+      "location": "Distrito Federal - Brasília"
+    },
+    {
+      "experienceDate": { "startDate": "Jun 2021", "endDate": "Nov 2024" },
+      "jobTitle": "Desenvolvedor Front-End",
+      "description": "Fui responsável pelo frontend do sistema de campanhas no WhatsApp, que se tornou um dos carros-chefe da empresa, aumentando em 30% o engajamento dos usuários. Além disso, criei um sistema de login flexível que solucionou falhas de registro e otimizei o desempenho da plataforma, garantindo maior escalabilidade e carregamento mais rápido.",
+      "location": "São Paulo - SP"
+    },
+    {
+      "experienceDate": { "startDate": "Jan 2021", "endDate": "Jun 2021" },
+      "jobTitle": "Desenvolvedor Front-End",
+      "description": "No Trampolim Project, desenvolvi um site responsivo que aumentou a visibilidade dos autores, além de estruturar uma arquitetura sustentável e implementar uma galeria de fotos funcional e de fácil manutenção.",
+      "location": "São Paulo - SP"
+    },
+    {
+      "experienceDate": { "startDate": "Mai 2020", "endDate": "Dez 2023" },
+      "jobTitle": "Desenvolvedor Front-End",
+      "description": "Trabalhei no desenvolvimento de interfaces para web e Twitch, criando experiências responsivas e interativas. Um dos destaques foi a implementação de uma interface de jogo integrada à Twitch, que aumentou em 60% a interação do público com o conteúdo.",
+      "location": "São Paulo - SP"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Automatizador de PRs com IA",
+      "description": "Ferramenta que integra GitHub, Jira e IA para criar descrições completas de Pull Requests automaticamente."
+    }
+  ]
+}

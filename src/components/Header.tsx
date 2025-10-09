@@ -1,10 +1,14 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Clock from "./clock";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { i18n } = useTranslation();
   return (
-    <nav className="fixed py-2.5 top-0 left-0 w-full z-50 bg-[#0d1220]/60 backdrop-blur-sm border-b border-white/10 shadow-md">
+    <nav className="fixed py-2.5 top-0 left-0 w-full z-100 bg-[#0d1220]/60 backdrop-blur-sm border-b border-white/10 shadow-md">
       <div className="mx-auto px-2 flex items-center justify-between">
         {/* Perfil */}
         <div className="flex items-center gap-3">

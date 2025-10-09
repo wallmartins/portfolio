@@ -31,6 +31,7 @@ import DraggableWrapper from "../Draggable/DraggableWrapper";
 import ExperienceModalContent from "./ModalContent/Experiences/ExperienceModalContent";
 import DownloadCV from "../DownloadCV";
 import Menu from "../Menu/Menu";
+import { useTranslation } from "react-i18next";
 
 // Estender a interface para incluir posição calculada
 interface IModalWithPosition extends ISidebarItem {
@@ -49,73 +50,74 @@ interface IModalWithPosition extends ISidebarItem {
 }
 
 const ModalManager = () => {
+  const { t } = useTranslation();
   const sidebarItems: ISidebarItem[] = [
     {
       id: "services",
-      title: "Services",
+      title: t("services"),
       content: <ServicesModalContent />,
       icon: <MdOutlineComputer />,
       side: "left",
     },
     {
       id: "projects",
-      title: "Projects",
+      title: t("projectsLabel"),
       content: <ProjectsModalContent />,
       icon: <FaRegFolderOpen />,
       side: "left",
     },
     {
       id: "experience",
-      title: "Experiences",
+      title: t("experiencesLabel"),
       content: <ExperienceModalContent />,
       icon: <BsPersonWorkspace />,
       side: "left",
     },
     {
       id: "blog",
-      title: "Blog",
+      title: t("blog"),
       content: <BlogModalContent />,
       icon: <ImPencil2 />,
       side: "left",
     },
     {
       id: "contact",
-      title: "Contact",
+      title: t("contact"),
       content: <ContactModalContent />,
       icon: <MdAlternateEmail />,
       side: "left",
     },
     {
       id: "tools",
-      title: "Tools",
+      title: t("tools"),
       content: <ToolsModalContent />,
       icon: <GoGear />,
       side: "right",
     },
     {
       id: "music",
-      title: "Music",
+      title: t("music"),
       content: <MusicModalContent />,
       icon: <IoMusicalNotesOutline />,
       side: "right",
     },
     {
       id: "books",
-      title: "Book",
+      title: t("book"),
       content: <BookModalContent />,
       icon: <PiBookOpenTextThin />,
       side: "right",
     },
     {
       id: "gallery",
-      title: "Gallery",
+      title: t("gallery"),
       content: <GalleryModalContent />,
       icon: <TfiGallery />,
       side: "right",
     },
     {
       id: "cv",
-      title: "Download CV",
+      title: t("downloadResume"),
       content: <DownloadCV />,
       icon: <IoDocumentAttachOutline />,
       side: "right",

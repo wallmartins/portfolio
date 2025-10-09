@@ -1,0 +1,68 @@
+{
+  "heroTitle": "Coding Digital Realities that Revolutionize",
+  "heroDescription": "Since early on, I discovered that technology could be more than lines of code: it can transform ideas into experiences that truly impact people. I started by creating websites for schools in my hometown, and from then on, I never stopped seeking ways to combine creativity and technical skills to solve real problems. <br /> Today, I work as a developer specialized in building interfaces that not only perform efficiently but also delight users and drive business impact. My obsession with details translates into clean, intuitive, and scalable solutions that help companies grow and stand out in the digital space. <br /> I believe every project is an opportunity to tell a story – and my role is to ensure that this story is remembered, whether through the smoothness of the experience, the aesthetics, or the results it delivers. If your idea needs life, performance, and purpose, I can help make it a reality.",
+  "projectDemo": "Project Demo",
+  "technologiesUsed": "Technologies Used",
+  "challenges": "Challenges",
+  "goals": "Goals",
+  "results": "Results",
+  "services": "Services",
+  "projectsLabel": "Projects",
+  "experiencesLabel": "Experiences",
+  "blog": "Blog",
+  "contact": "Contact",
+  "tools": "Tools",
+  "music": "Music",
+  "book": "Book",
+  "gallery": "Gallery",
+  "downloadResume": "Download Resume",
+  "name": "Name",
+  "message": "Message",
+  "sending": "Sending...",
+  "send": "Send",
+  "contactDescription": "I’d love to hear from you! Whether to talk about a project, ask questions about my services, or just say hi, feel free to reach out using the form below.",
+  "letsTalk": "Let's talk?",
+  "messageSent": "Message sent successfully!",
+  "messageError": "Error sending message",
+  "serverError": "Server connection error",
+  "downloadPDF": "Click here to download the PDF",
+  "available": "Available",
+  "experiences": [
+    {
+      "experienceDate": { "startDate": "Apr 2025", "endDate": "Present" },
+      "jobTitle": "Senior Software Engineer",
+      "description": "At Cielo, I worked on migrating and implementing a decommissioning system that saved 5 million, and contributed to the integration of an AI-powered chat that reduced support tickets by 70%. I also helped develop an automated system for recurring report delivery, providing more autonomy for clients, and with the team, we raised code quality to a higher standard, achieving over 90% test coverage across all projects.",
+      "location": "Barueri - SP, Brazil"
+    },
+    {
+      "experienceDate": { "startDate": "Sep 2024", "endDate": "Jan 2025" },
+      "jobTitle": "Full Stack Developer",
+      "description": "I developed configuration screens for message sending and support through Webhook and WhatsApp, as well as implemented backend infrastructure to efficiently connect systems. I also contributed to making dashboards more visual and interactive, enhancing the data analysis experience for users.",
+      "location": "Brasilia - DF, Brazil"
+    },
+    {
+      "experienceDate": { "startDate": "Jun 2021", "endDate": "Nov 2024" },
+      "jobTitle": "Front-End Developer",
+      "description": "I was responsible for the frontend of the WhatsApp campaign system, which became one of the company's flagship features, increasing user engagement by 30%. I also created a flexible login system that solved registration issues and optimized platform performance, ensuring greater scalability and faster loading.",
+      "location": "São Paulo - SP, Brazil"
+    },
+    {
+      "experienceDate": { "startDate": "Jan 2021", "endDate": "Jun 2021" },
+      "jobTitle": "Front-End Developer",
+      "description": "At Trampolim Project, I developed a responsive website that increased the visibility of authors, structured a sustainable architecture, and implemented a functional and easy-to-maintain photo gallery.",
+      "location": "São Paulo - SP, Brazil"
+    },
+    {
+      "experienceDate": { "startDate": "May 2020", "endDate": "Dec 2023" },
+      "jobTitle": "Front-End Developer",
+      "description": "I worked on developing web and Twitch interfaces, creating responsive and interactive experiences. A highlight was implementing a Twitch-integrated game interface that increased audience interaction with the content by 60%.",
+      "location": "São Paulo - SP, Brazil"
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI-Powered PR Automation",
+      "description": "Tool that integrates GitHub, Jira, and AI to automatically generate complete Pull Request descriptions."
+    }
+  ]
+}

@@ -1,12 +1,13 @@
 import React from "react";
 import ProjectCard from "./ProjectsCard";
+import { useTranslation } from "react-i18next";
 
 const ProjectsModalContent = () => {
+  const { t } = useTranslation();
   const projects = [
     {
-      title: "Automatizador de PRs com IA",
-      description:
-        "Ferramenta que integra GitHub, Jira e IA para criar descrições completas de Pull Requests automaticamente.",
+      title: t("projects.title"),
+      description: t("projects.description"),
       imageUrl:
         "https://64.media.tumblr.com/6eb5079ca6116db1370c51c17828821f/46ea46fb437169f4-ad/s1280x1920/22912d4c015f25c12f774906616a09530ac101f9.pnj",
       technologies: [
