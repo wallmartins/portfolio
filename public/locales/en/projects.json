@@ -1,0 +1,38 @@
+{
+  "pr-ai-assistant": {
+    "title": "AI-Powered PR Automation",
+    "subtitle": "Revolutionizing code review with GitHub, Jira and Artificial Intelligence integration",
+    "gif": "/pr-ai-gif.gif",
+    "challenges": [
+      "In our development process, we noticed a major obstacle: Pull Request descriptions were superficial and incomplete. This caused reviewers and QA to analyze changes practically blindly, without clarity about what was being delivered. The result? Gaps, rework and inefficient code review.",
+      "It was necessary to find a way to elevate the quality of the review process without increasing the burden on developers. Three major challenges became evident:",
+      "• Contextualize each PR with reliable information from Jira and GitHub",
+      "• Create a fast and intuitive workflow for developers, without bureaucracy",
+      "• Ensure consistent descriptions even in complex or extensive PRs"
+    ],
+    "goals": [
+      "The goal was clear: transform code review into a more transparent, secure and efficient process. We wanted to ensure that both reviewers and QA had all necessary information from the start, without depending on manual and faulty descriptions.",
+      "To achieve this, we defined four main objectives:",
+      "• Automate the generation of complete PRs — with title, motivation, changes made, impact and recommendations",
+      "• Integrate Jira and GitHub to offer total traceability of tasks and branches",
+      "• Reduce errors and gaps in the review process, increasing reliability",
+      "• Optimize developer time, eliminating repetitive and bureaucratic tasks"
+    ],
+    "results": [
+      "The impact of the AI-Powered PR Automation was transformative. With it, reviewers stopped working blindly and gained a clear and detailed view of each delivery. QA gained context from the beginning, and developers saved precious time.",
+      "The main results achieved were:",
+      "• ✅ Detailed PRs automatically generated in seconds",
+      "• ✅ Faster, clearer and safer reviews",
+      "• ✅ Reduction of rework and communication failures between teams",
+      "• ✅ Significant time savings for developers, who could focus on delivering real value to the product"
+    ],
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "GitHub API",
+      "Jira API",
+      "AI (Ollama/OpenAI)"
+    ]
+  }
+}

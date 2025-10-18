@@ -1,4 +1,5 @@
 {
+  "about": "Sobre",
   "heroTitle": "Codificando Realidades Digitais que Revolucionam",
   "heroDescription": "Desde cedo descobri que a tecnologia poderia ser mais do que linhas de código: ela pode transformar ideias em experiências que marcam pessoas. Comecei criando sites para escolas da minha cidade, e dali em diante nunca mais parei de buscar formas de unir criatividade e técnica para resolver problemas reais. \nHoje, atuo como desenvolvedor especializado em construir interfaces que não apenas funcionam com eficiência, mas também encantam usuários e geram impacto para os negócios. Minha obsessão pelos detalhes se traduz em soluções limpas, intuitivas e escaláveis, que ajudam empresas a crescer e se destacar no digital. \nAcredito que cada projeto é uma oportunidade de contar uma história – e o meu papel é garantir que essa história seja lembrada, seja pela fluidez da experiência, pela estética ou pelo resultado que entrega. Se a sua ideia precisa de vida, performance e propósito, eu posso ajudar a torná-la realidade.",
   "projectDemo": "Demonstração do projeto",
@@ -6,7 +7,7 @@
   "challenges": "Desafios",
   "goals": "Metas",
   "results": "Resultados",
-  "services": "Serviços",
+  "servicesLabel": "Serviços",
   "projectsLabel": "Projetos",
   "experiencesLabel": "Experiências",
   "blog": "Blog",
@@ -27,42 +28,153 @@
   "serverError": "Erro de conexão com o servidor",
   "downloadPDF": "Clique aqui para fazer o download do PDF",
   "available": "Disponível",
+  "softwareEngineer": "Engenheiro de Software",
+  "getItNow": "Adquira agora",
+  "amazon": "Amazon",
+  "moreMusic": "Mais Músicas",
+  "spotify": "Spotify",
+  "services": {
+    "webDevelopment": {
+      "title": "Desenvolvimento Web",
+      "description": "Construção de sites e apps rápidos, responsivos e prontos pra qualquer dispositivo."
+    },
+    "landingPages": {
+      "title": "Landing Pages",
+      "description": "Páginas pensadas para conversão, captação de leads e performance nas campanhas."
+    },
+    "apiIntegration": {
+      "title": "Integração com APIs",
+      "description": "Conexão com bancos de dados, CRMs, ferramentas externas e tudo que seu sistema precisar."
+    },
+    "designSystem": {
+      "title": "Design System",
+      "description": "Criação de componentes reutilizáveis com visual consistente e fácil manutenção."
+    },
+    "performanceSeo": {
+      "title": "Performance e SEO",
+      "description": "Otimizações que garantem velocidade de carregamento e destaque nos buscadores."
+    },
+    "authSecurity": {
+      "title": "Autenticação e Segurança",
+      "description": "Login, cadastro e controle de acesso com foco em usabilidade e proteção de dados."
+    },
+    "chatbotsAutomation": {
+      "title": "Chatbots e Automação",
+      "description": "Integrações com bots, WhatsApp e soluções que agilizam a comunicação com clientes."
+    },
+    "codeRefactoring": {
+      "title": "Refatoração de Código",
+      "description": "Melhoria de sistemas existentes com foco em performance, legibilidade e escalabilidade."
+    },
+    "aiIntegration": {
+      "title": "Integração com IA",
+      "description": "Uso de APIs como OpenAI, Google e Hugging Face para adicionar inteligência ao seu sistema."
+    },
+    "smartChatbots": {
+      "title": "Chatbots Inteligentes",
+      "description": "Criação de bots que entendem contexto, respondem com naturalidade e economizam tempo da sua equipe."
+    },
+    "automatedContent": {
+      "title": "Conteúdo Automatizado",
+      "description": "Textos, descrições, resumos e respostas automáticas criados com IA."
+    },
+    "smartSearch": {
+      "title": "Busca Inteligente com IA",
+      "description": "Resultados mais relevantes com interpretação de linguagem natural."
+    },
+    "dataManagement": {
+      "title": "Data Management",
+      "description": "Categorize e organize informações com inteligência artificial."
+    },
+    "businessAi": {
+      "title": "IA para Negócios",
+      "description": "Soluções com IA generativa e machine learning adaptadas para sua necessidade."
+    }
+  },
   "experiences": [
     {
       "experienceDate": { "startDate": "Abr 2025", "endDate": "Atualmente" },
       "jobTitle": "Engenheiro de Software Sênior",
+      "companyName": "Cielo",
       "description": "Na Cielo, atuei na migração e implementação de um sistema de descomissionamento que gerou economia de 5 milhões, além de contribuir para a integração de um chat com IA que reduziu em 70% os chamados de suporte. Também participei do desenvolvimento de um sistema automatizado de entrega de relatórios recorrentes, trazendo mais autonomia para os clientes, e, junto ao time, atuamos na elevação da qualidade do código a um patamar superior, com mais de 90% de cobertura em todos os projetos.",
-      "location": "Barueri - SP"
+      "location": "Barueri - SP",
+      "techs": [
+        "React",
+        "Styled-Components",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "Storybook",
+        "Amazon Lex",
+        "MongoDB"
+      ]
     },
     {
       "experienceDate": { "startDate": "Set 2024", "endDate": "Jan 2025" },
       "jobTitle": "Desenvolvedor Full Stack",
+      "companyName": "Trend Soluções em Atendimento",
       "description": "Atuei no desenvolvimento de telas de configuração para disparo de mensagens e atendimento via Webhook e WhatsApp, além de implementar a infraestrutura de backend que conectava os sistemas de forma eficiente. Também contribuí para tornar os dashboards mais visuais e interativos, elevando a experiência de análise de dados para os usuários.",
-      "location": "Distrito Federal - Brasília"
+      "location": "Distrito Federal - Brasília",
+      "techs": [
+        "Vue.js",
+        "Node.js",
+        "TypeScript",
+        "Express",
+        "CSS3",
+        "NestJS",
+        "Postgresql"
+      ]
     },
     {
       "experienceDate": { "startDate": "Jun 2021", "endDate": "Nov 2024" },
       "jobTitle": "Desenvolvedor Front-End",
+      "companyName": "Locaweb",
       "description": "Fui responsável pelo frontend do sistema de campanhas no WhatsApp, que se tornou um dos carros-chefe da empresa, aumentando em 30% o engajamento dos usuários. Além disso, criei um sistema de login flexível que solucionou falhas de registro e otimizei o desempenho da plataforma, garantindo maior escalabilidade e carregamento mais rápido.",
-      "location": "São Paulo - SP"
+      "location": "São Paulo - SP",
+      "techs": ["Vue.js", "JavaScript", "TypeScript", "CSS3", "Node.js"]
     },
     {
       "experienceDate": { "startDate": "Jan 2021", "endDate": "Jun 2021" },
       "jobTitle": "Desenvolvedor Front-End",
+      "companyName": "Trampolim Project",
       "description": "No Trampolim Project, desenvolvi um site responsivo que aumentou a visibilidade dos autores, além de estruturar uma arquitetura sustentável e implementar uma galeria de fotos funcional e de fácil manutenção.",
-      "location": "São Paulo - SP"
+      "location": "São Paulo - SP",
+      "techs": ["React", "JavaScript", "CSS3", "HTML"]
     },
     {
       "experienceDate": { "startDate": "Mai 2020", "endDate": "Dez 2023" },
       "jobTitle": "Desenvolvedor Front-End",
+      "companyName": "Porão Network",
       "description": "Trabalhei no desenvolvimento de interfaces para web e Twitch, criando experiências responsivas e interativas. Um dos destaques foi a implementação de uma interface de jogo integrada à Twitch, que aumentou em 60% a interação do público com o conteúdo.",
-      "location": "São Paulo - SP"
+      "location": "São Paulo - SP",
+      "techs": ["React", "JavaScript", "CSS3", "HTML", "Typescript"]
     }
   ],
-  "projects": [
-    {
-      "title": "Automatizador de PRs com IA",
-      "description": "Ferramenta que integra GitHub, Jira e IA para criar descrições completas de Pull Requests automaticamente."
-    }
-  ]
+  "projects": {
+    "title": "Automatizador de PRs com IA",
+    "description": "Ferramenta que integra GitHub, Jira e IA para criar descrições completas de Pull Requests automaticamente."
+  },
+  "toolsCategories": {
+    "webProgrammingLanguage": "Linguagem de Programação Web",
+    "typedJavaScript": "JavaScript Tipado",
+    "frontendLibrary": "Biblioteca Frontend",
+    "reactFramework": "Framework React",
+    "frontendFramework": "Framework Frontend",
+    "vueFramework": "Framework Vue",
+    "utilityFirstCss": "CSS Utility-First",
+    "frontendBuildTool": "Ferramenta de Build Frontend",
+    "backendRuntime": "Runtime Backend",
+    "backendFramework": "Framework Backend",
+    "relationalDatabase": "Banco de Dados Relacional",
+    "noSqlDatabase": "Banco de Dados NoSQL",
+    "databaseOrm": "ORM de Banco de Dados",
+    "realtimeBackend": "Backend em Tempo Real",
+    "apiQueryLanguage": "Linguagem de Consulta de API",
+    "containerization": "Containerização",
+    "aiApiProvider": "Provedor de API de IA",
+    "aiTooling": "Ferramentas de IA",
+    "deploymentPlatform": "Plataforma de Deploy",
+    "versionControl": "Controle de Versão",
+    "designTool": "Ferramenta de Design"
+  }
 }

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function NoiseOverlay() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [glitchElements, setGlitchElements] = useState<React.ReactNode[]>([]);
+  const glitchCounterRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,7 +39,8 @@ export default function NoiseOverlay() {
     }, 3000);
 
     const createSoftGlitch = () => {
-      const glitchId = Date.now();
+      glitchCounterRef.current += 1;
+      const glitchId = glitchCounterRef.current;
       const width = window.innerWidth * 0.15;
       const height = window.innerHeight * 0.08;
 

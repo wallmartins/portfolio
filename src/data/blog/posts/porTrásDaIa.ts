@@ -2,11 +2,14 @@ import { BlogPost } from "@/types/blog";
 
 export const porTrasDaIa: BlogPost = {
   slug: "por-tras-da-ia",
-  title: "Por trás da automação: como construímos PRs inteligentes com IA",
-  subtitle:
-    "Um mergulho técnico em integrações, prompts e modelos que transformaram o fluxo de desenvolvimento",
+  title: "porTrasDaIa", // Translation key
+  subtitle: "porTrasDaIa", // Translation key
   date: "2025-09-25",
   tags: ["IA", "GitHub", "Jira", "Automação", "Backend", "DevTools"],
+  content: "porTrasDaIa", // Translation key
+};
+
+/* Original content for reference:
   content: `
 # Por trás da automação: como construímos PRs inteligentes com IA  
 ### _Um mergulho técnico em integrações, prompts e modelos que transformaram o fluxo de desenvolvimento_
@@ -158,4 +161,4 @@ Separar modelos por função, integrar com ferramentas do dia a dia e orquestrar
 
 E o mais importante: abriu espaço para que os desenvolvedores gastem menos tempo com burocracia e mais tempo com **criação e inovação**.
 `,
-};
+*/

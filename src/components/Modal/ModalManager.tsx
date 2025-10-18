@@ -54,7 +54,7 @@ const ModalManager = () => {
   const sidebarItems: ISidebarItem[] = [
     {
       id: "services",
-      title: t("services"),
+      title: t("servicesLabel"),
       content: <ServicesModalContent />,
       icon: <MdOutlineComputer />,
       side: "left",

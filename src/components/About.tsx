@@ -17,7 +17,7 @@ const About = () => {
       minHeight={720}
     >
       <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4">
-        <p className="font-button text-[#c0cbcd] text-left text-sm">About</p>
+        <p className="font-button text-[#c0cbcd] text-left text-sm">{t("about")}</p>
         <div className="bg-[rgb(9,1,13)] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-4">
           <Image
             src="/about.jpg"

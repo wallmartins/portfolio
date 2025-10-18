@@ -1,8 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { SiSpotify } from "react-icons/si";
 import { TbArrowUpRight } from "react-icons/tb";
 
 const MusicModalContent = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <iframe
@@ -25,8 +28,8 @@ const MusicModalContent = () => {
         <div className="flex items-center gap-3">
           <SiSpotify className="text-3xl fill-[#73797b]" />
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-medium text-white">More Music</span>
-            <span className="text-xs text-gray-400">Spotify</span>
+            <span className="text-sm font-medium text-white">{t("moreMusic")}</span>
+            <span className="text-xs text-gray-400">{t("spotify")}</span>
           </div>
         </div>
         <TbArrowUpRight className="text-sm text-gray-500" />
