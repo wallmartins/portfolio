@@ -30,7 +30,6 @@ import { ISidebarItem } from "@/types/sidebar";
 import DraggableWrapper from "../Draggable/DraggableWrapper";
 import ExperienceModalContent from "./ModalContent/Experiences/ExperienceModalContent";
 import DownloadCV from "../DownloadCV";
-import Menu from "../Menu/Menu";
 import { useTranslation } from "react-i18next";
 
 // Estender a interface para incluir posição calculada
