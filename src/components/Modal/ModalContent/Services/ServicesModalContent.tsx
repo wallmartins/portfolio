@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { FaLaptopCode, FaPuzzlePiece } from "react-icons/fa";
 import { FiTarget, FiTool } from "react-icons/fi";
@@ -15,89 +16,77 @@ import { CgSmartHomeBoiler } from "react-icons/cg";
 import ServicesComponents from "./ServicesComponents";
 
 const ServicesModalContent = () => {
+  const { t } = useTranslation();
+
   const services = [
     {
-      title: "Desenvolvimento Web",
-      description:
-        "Construção de sites e apps rápidos, responsivos e prontos pra qualquer dispositivo.",
+      title: t("services.webDevelopment.title"),
+      description: t("services.webDevelopment.description"),
       icon: <FaLaptopCode />,
     },
     {
-      title: "Landing Pages",
-      description:
-        "Páginas pensadas para conversão, captação de leads e performance nas campanhas.",
+      title: t("services.landingPages.title"),
+      description: t("services.landingPages.description"),
       icon: <FiTarget />,
     },
     {
-      title: "Integração com APIs",
-      description:
-        "Conexão com bancos de dados, CRMs, ferramentas externas e tudo que seu sistema precisar.",
+      title: t("services.apiIntegration.title"),
+      description: t("services.apiIntegration.description"),
       icon: <AiOutlineApi />,
     },
     {
-      title: "Design System",
-      description:
-        "Criação de componentes reutilizáveis com visual consistente e fácil manutenção.",
+      title: t("services.designSystem.title"),
+      description: t("services.designSystem.description"),
       icon: <FaPuzzlePiece />,
     },
     {
-      title: "Performance e SEO",
-      description:
-        "Otimizações que garantem velocidade de carregamento e destaque nos buscadores.",
+      title: t("services.performanceSeo.title"),
+      description: t("services.performanceSeo.description"),
       icon: <RiBarChartBoxLine />,
     },
     {
-      title: "Autenticação e Segurança",
-      description:
-        "Login, cadastro e controle de acesso com foco em usabilidade e proteção de dados.",
+      title: t("services.authSecurity.title"),
+      description: t("services.authSecurity.description"),
       icon: <HiOutlineLockClosed />,
     },
     {
-      title: "Chatbots e Automação",
-      description:
-        "Integrações com bots, WhatsApp e soluções que agilizam a comunicação com clientes.",
+      title: t("services.chatbotsAutomation.title"),
+      description: t("services.chatbotsAutomation.description"),
       icon: <TbRobot />,
     },
     {
-      title: "Refatoração de Código",
-      description:
-        "Melhoria de sistemas existentes com foco em performance, legibilidade e escalabilidade.",
+      title: t("services.codeRefactoring.title"),
+      description: t("services.codeRefactoring.description"),
       icon: <FiTool />,
     },
     {
-      title: "Integração com IA",
-      description:
-        "Uso de APIs como OpenAI, Google e Hugging Face para adicionar inteligência ao seu sistema.",
+      title: t("services.aiIntegration.title"),
+      description: t("services.aiIntegration.description"),
       icon: <GiArtificialHive />,
     },
     {
-      title: "Chatbots Inteligentes",
-      description:
-        "Criação de bots que entendem contexto, respondem com naturalidade e economizam tempo da sua equipe.",
+      title: t("services.smartChatbots.title"),
+      description: t("services.smartChatbots.description"),
       icon: <SiDialogflow />,
     },
     {
-      title: "Conteúdo Automatizado",
-      description:
-        "Textos, descrições, resumos e respostas automáticas criados com IA.",
+      title: t("services.automatedContent.title"),
+      description: t("services.automatedContent.description"),
       icon: <MdOutlineTextSnippet />,
     },
     {
-      title: "Busca Inteligente com IA",
-      description:
-        "Resultados mais relevantes com interpretação de linguagem natural.",
+      title: t("services.smartSearch.title"),
+      description: t("services.smartSearch.description"),
       icon: <BiSearchAlt2 />,
     },
     {
-      title: "Data Management",
-      description:
-        "Categorize e organize informações com inteligência artificial.",
+      title: t("services.dataManagement.title"),
+      description: t("services.dataManagement.description"),
       icon: <VscFolderLibrary />,
     },
     {
-      title: "IA para Negócios",
-      description:
-        "Soluções com IA generativa e machine learning adaptadas para sua necessidade.",
+      title: t("services.businessAi.title"),
+      description: t("services.businessAi.description"),
       icon: <CgSmartHomeBoiler />,
     },
   ];

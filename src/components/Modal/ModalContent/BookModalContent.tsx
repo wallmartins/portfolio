@@ -1,9 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { AiFillAmazonSquare } from "react-icons/ai";
 import { TbArrowUpRight } from "react-icons/tb";
 
 const BookModalContent = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="w-[280px] flex flex-col justify-center">
       <div className="rounded-md overflow-hidden shadow-md mb-4 flex justify-center">
@@ -24,8 +27,8 @@ const BookModalContent = () => {
       >
         <AiFillAmazonSquare />
         <div className="flex flex-col leading-tight">
-          <span className="text-sm font-medium text-white">Get it now</span>
-          <span className="text-xs text-gray-400">Amazon</span>
+          <span className="text-sm font-medium text-white">{t("getItNow")}</span>
+          <span className="text-xs text-gray-400">{t("amazon")}</span>
         </div>
         <TbArrowUpRight className="text-sm text-gray-500" />
       </a>

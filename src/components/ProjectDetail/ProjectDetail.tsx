@@ -55,9 +55,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           <h3 className="font-title text-[#c0cbcd] text-xl uppercase mb-2">
             Desafios
           </h3>
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             {project.challenges.map((challenge, index) => (
-              <li key={index} className="font-body text-xs text-[#99a2a4]">
+              <li key={index} className="font-body text-[#99a2a4]">
                 {challenge}
               </li>
             ))}
@@ -70,9 +70,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
             <h3 className="font-title text-[#c0cbcd] text-xl uppercase mb-2">
               Metas
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {project.goals.map((goal, index) => (
-                <li key={index} className="font-body text-xs text-[#99a2a4]">
+                <li key={index} className="font-body text-[#99a2a4]">
                   {goal}
                 </li>
               ))}
@@ -82,9 +82,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
             <h3 className="font-title text-[#c0cbcd] text-xl uppercase mb-2">
               Resultados
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {project.results.map((result, index) => (
-                <li key={index} className="font-body text-xs text-[#99a2a4]">
+                <li key={index} className="font-body text-[#99a2a4]">
                   {result}
                 </li>
               ))}

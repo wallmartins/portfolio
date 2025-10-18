@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Modal from "./Modal";
 
 // CONTENT
@@ -30,82 +30,184 @@ import { ISidebarItem } from "@/types/sidebar";
 import DraggableWrapper from "../Draggable/DraggableWrapper";
 import ExperienceModalContent from "./ModalContent/Experiences/ExperienceModalContent";
 import DownloadCV from "../DownloadCV";
+import { useTranslation } from "react-i18next";
+
+// Estender a interface para incluir posição calculada
+interface IModalWithPosition extends ISidebarItem {
+  position?: {
+    top: number;
+    left: number;
+    right: number;
+    bottom: number;
+    width: number;
+    height: number;
+  };
+  calculatedPosition?: {
+    x: number;
+    y: number;
+  };
+}
 
 const ModalManager = () => {
+  const { t } = useTranslation();
   const sidebarItems: ISidebarItem[] = [
     {
       id: "services",
-      title: "Services",
+      title: t("servicesLabel"),
       content: <ServicesModalContent />,
       icon: <MdOutlineComputer />,
       side: "left",
     },
     {
       id: "projects",
-      title: "Projects",
+      title: t("projectsLabel"),
       content: <ProjectsModalContent />,
       icon: <FaRegFolderOpen />,
       side: "left",
     },
     {
       id: "experience",
-      title: "Experiences",
+      title: t("experiencesLabel"),
       content: <ExperienceModalContent />,
       icon: <BsPersonWorkspace />,
       side: "left",
     },
     {
       id: "blog",
-      title: "Blog",
+      title: t("blog"),
       content: <BlogModalContent />,
       icon: <ImPencil2 />,
       side: "left",
     },
     {
       id: "contact",
-      title: "Contact",
+      title: t("contact"),
       content: <ContactModalContent />,
       icon: <MdAlternateEmail />,
       side: "left",
     },
     {
       id: "tools",
-      title: "Tools",
+      title: t("tools"),
       content: <ToolsModalContent />,
       icon: <GoGear />,
       side: "right",
     },
     {
       id: "music",
-      title: "Music",
+      title: t("music"),
       content: <MusicModalContent />,
       icon: <IoMusicalNotesOutline />,
       side: "right",
     },
     {
       id: "books",
-      title: "Book",
+      title: t("book"),
       content: <BookModalContent />,
       icon: <PiBookOpenTextThin />,
       side: "right",
     },
     {
       id: "gallery",
-      title: "Gallery",
+      title: t("gallery"),
       content: <GalleryModalContent />,
       icon: <TfiGallery />,
       side: "right",
     },
     {
       id: "cv",
-      title: "Download CV",
+      title: t("downloadResume"),
       content: <DownloadCV />,
       icon: <IoDocumentAttachOutline />,
       side: "right",
     },
   ];
 
-  const [openModals, setOpenModals] = useState<ISidebarItem[]>([]);
+  const [openModals, setOpenModals] = useState<IModalWithPosition[]>([]);
+
+  // Função para calcular posição segura do modal
+  const calculateSafePosition = useCallback((modal: IModalWithPosition) => {
+    const modalWidth = 400; // Largura estimada do modal
+    const modalHeight = 500; // Altura estimada do modal
+    const offset = 80; // Distância entre sidebar e modal
+
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    let x, y;
+
+    if (modal.position) {
+      // Calcular posição inicial baseada no lado da sidebar
+      if (modal.side === "left") {
+        // Modal à direita da sidebar esquerda
+        x = (modal.position?.left ?? 0) + offset;
+      } else {
+        // Modal à esquerda da sidebar direita
+        x = (modal.position?.right ?? 0) - offset;
+      }
+      y = modal.position.top;
+    } else {
+      // Posição padrão se não houver posição original
+      x = modal.side === "left" ? 100 : viewportWidth - modalWidth - 100;
+      y = 100;
+    }
+
+    if (x + modalWidth > viewportWidth && modal.side === "left") {
+      x = viewportWidth - modalWidth - 20;
+    }
+
+    if (x + modalWidth > viewportWidth && modal.side === "right") {
+      x = viewportWidth - modalWidth + 260;
+    }
+
+    if (x < 20) {
+      x = 20;
+    }
+
+    if (y + modalHeight > viewportHeight) {
+      y = viewportHeight - modalHeight - 20;
+    }
+    if (y < 20) {
+      y = 20;
+    }
+
+    return { x, y };
+  }, []);
+
+  // Função para reposicionar todos os modais abertos
+  const repositionModals = useCallback(() => {
+    setOpenModals((prevModals) =>
+      prevModals.map((modal) => ({
+        ...modal,
+        calculatedPosition: calculateSafePosition(modal),
+      }))
+    );
+  }, [calculateSafePosition]);
+
+  // Listener para resize da janela
+  useEffect(() => {
+    const handleResize = () => {
+      // Debounce para evitar muitas atualizações
+      const timeoutId = setTimeout(() => {
+        repositionModals();
+      }, 100);
+
+      return () => clearTimeout(timeoutId);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [repositionModals]);
+
+  // Reposicionar modais quando a lista de modais abertos muda
+  useEffect(() => {
+    if (openModals.length > 0) {
+      repositionModals();
+    }
+  }, [openModals.length, repositionModals]);
 
   const openModal = (item: ISidebarItem, element: HTMLDivElement | null) => {
     if (!element) return;
@@ -121,7 +223,11 @@ const ModalManager = () => {
       height: rect.height,
     };
 
-    const modalWithPosition = { ...item, position };
+    const modalWithPosition: IModalWithPosition = {
+      ...item,
+      position,
+      calculatedPosition: calculateSafePosition({ ...item, position }),
+    };
 
     setOpenModals((prev) => {
       if (prev.some((modal) => modal.id === item.id)) {
@@ -139,17 +245,15 @@ const ModalManager = () => {
     <>
       <Sidebar items={sidebarItems} onItemClick={openModal} />
       {openModals.map((modal) => {
-        const offset = 80;
-
-        const x =
-          modal.side === "left"
-            ? (modal.position?.left ?? 0) + offset
-            : (modal.position?.right ?? 0) - offset;
-
-        const y = modal.position?.top ?? 0;
+        const position =
+          modal.calculatedPosition || calculateSafePosition(modal);
 
         return (
-          <DraggableWrapper key={modal.id} initialX={x} initialY={y}>
+          <DraggableWrapper
+            key={modal.id}
+            initialX={position.x}
+            initialY={position.y}
+          >
             <Modal
               title={modal.title}
               side={modal.side}

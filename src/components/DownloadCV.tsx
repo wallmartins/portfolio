@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { GrDocumentPdf } from "react-icons/gr";
 
 const DownloadCV = () => {
+  const { t } = useTranslation();
+
   return (
     <a
       href="/cv-wallace-martins.pdf"
@@ -12,7 +15,7 @@ const DownloadCV = () => {
     >
       <div className="flex flex-col items-center gap-3">
         <GrDocumentPdf size={20} />
-        <span>Clique aqui para fazer o download do PDF</span>
+        <span>{t("downloadPDF")}</span>
       </div>
     </a>
   );

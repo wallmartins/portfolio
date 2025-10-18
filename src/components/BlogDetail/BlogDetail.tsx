@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import { components } from "@/lib/MDXComponent";
 
 interface BlogDetailProps {
@@ -7,7 +10,17 @@ interface BlogDetailProps {
 }
 
 const BlogDetail = ({ content }: BlogDetailProps) => {
-  return <MDXRemote source={content} components={components} />;
+  const [mdxSource, setMdxSource] = React.useState<MDXRemoteSerializeResult | null>(null);
+
+  React.useEffect(() => {
+    serialize(content).then(setMdxSource);
+  }, [content]);
+
+  if (!mdxSource) {
+    return <div className="animate-pulse">Carregando...</div>;
+  }
+
+  return <MDXRemote {...mdxSource} components={components} />;
 };
 
 export default BlogDetail;

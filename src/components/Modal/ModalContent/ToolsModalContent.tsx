@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   SiNextdotjs,
   SiNuxtdotjs,
@@ -27,160 +28,145 @@ import {
 import { TbArrowUpRight } from "react-icons/tb";
 
 const ToolsModalContent = () => {
+  const { t } = useTranslation();
+
   const tools = [
-    // Base Language
     {
       icon: SiJavascript,
       name: "JavaScript",
-      purpose: "Web Programming Language",
+      purpose: t("toolsCategories.webProgrammingLanguage"),
       link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
       icon: SiTypescript,
       name: "TypeScript",
-      purpose: "Typed JavaScript",
+      purpose: t("toolsCategories.typedJavaScript"),
       link: "https://www.typescriptlang.org",
     },
-
-    // Frontend Core
     {
       icon: SiReact,
       name: "React",
-      purpose: "Frontend Library",
+      purpose: t("toolsCategories.frontendLibrary"),
       link: "https://reactjs.org",
     },
     {
       icon: SiNextdotjs,
       name: "Next.js",
-      purpose: "React Framework",
+      purpose: t("toolsCategories.reactFramework"),
       link: "https://nextjs.org",
     },
     {
       icon: SiVuedotjs,
       name: "Vue.js",
-      purpose: "Frontend Framework",
+      purpose: t("toolsCategories.frontendFramework"),
       link: "https://vuejs.org",
     },
     {
       icon: SiNuxtdotjs,
       name: "Nuxt.js",
-      purpose: "Vue Framework",
+      purpose: t("toolsCategories.vueFramework"),
       link: "https://nuxt.com",
     },
-
-    // Styling e Build Tools
     {
       icon: SiTailwindcss,
       name: "Tailwind CSS",
-      purpose: "Utility-First CSS",
+      purpose: t("toolsCategories.utilityFirstCss"),
       link: "https://tailwindcss.com",
     },
     {
       icon: SiVite,
       name: "Vite",
-      purpose: "Frontend Build Tool",
+      purpose: t("toolsCategories.frontendBuildTool"),
       link: "https://vitejs.dev",
     },
-
-    // Backend Core
     {
       icon: SiNodedotjs,
       name: "Node.js",
-      purpose: "Backend Runtime",
+      purpose: t("toolsCategories.backendRuntime"),
       link: "https://nodejs.org",
     },
     {
       icon: SiExpress,
       name: "Express.js",
-      purpose: "Backend Framework",
+      purpose: t("toolsCategories.backendFramework"),
       link: "https://expressjs.com",
     },
     {
       icon: SiNestjs,
       name: "NestJS",
-      purpose: "Backend Framework",
+      purpose: t("toolsCategories.backendFramework"),
       link: "https://nestjs.com",
     },
-
-    // Databases & ORMs
     {
       icon: SiPostgresql,
       name: "PostgreSQL",
-      purpose: "Relational Database",
+      purpose: t("toolsCategories.relationalDatabase"),
       link: "https://www.postgresql.org",
     },
     {
       icon: SiMongodb,
       name: "MongoDB",
-      purpose: "NoSQL Database",
+      purpose: t("toolsCategories.noSqlDatabase"),
       link: "https://www.mongodb.com",
     },
     {
       icon: SiPrisma,
       name: "Prisma ORM",
-      purpose: "Database ORM",
+      purpose: t("toolsCategories.databaseOrm"),
       link: "https://www.prisma.io",
     },
     {
       icon: SiSupabase,
       name: "Supabase",
-      purpose: "Realtime Backend",
+      purpose: t("toolsCategories.realtimeBackend"),
       link: "https://supabase.com",
     },
-
-    // APIs & Infra
     {
       icon: SiGraphql,
       name: "GraphQL",
-      purpose: "API Query Language",
+      purpose: t("toolsCategories.apiQueryLanguage"),
       link: "https://graphql.org",
     },
     {
       icon: SiDocker,
       name: "Docker",
-      purpose: "Containerization",
+      purpose: t("toolsCategories.containerization"),
       link: "https://www.docker.com",
     },
-
-    // AI Tools
     {
       icon: SiOpenai,
       name: "OpenAI",
-      purpose: "AI API Provider",
+      purpose: t("toolsCategories.aiApiProvider"),
       link: "https://openai.com",
     },
     {
       icon: SiLangchain,
       name: "LangChain",
-      purpose: "AI Tooling",
+      purpose: t("toolsCategories.aiTooling"),
       link: "https://www.langchain.com",
     },
-
-    // Deployment
     {
       icon: SiVercel,
       name: "Vercel",
-      purpose: "Deployment Platform",
+      purpose: t("toolsCategories.deploymentPlatform"),
       link: "https://vercel.com",
     },
     {
       icon: SiNetlify,
       name: "Netlify",
-      purpose: "Deployment Platform",
+      purpose: t("toolsCategories.deploymentPlatform"),
       link: "https://www.netlify.com",
     },
-
-    // Versioning e Design
     {
       icon: SiGithub,
       name: "GitHub",
-      purpose: "Version Control",
+      purpose: t("toolsCategories.versionControl"),
       link: "https://github.com",
     },
     {
       icon: SiFigma,
       name: "Figma",
-      purpose: "Design Tool",
+      purpose: t("toolsCategories.designTool"),
       link: "https://figma.com",
     },
   ];

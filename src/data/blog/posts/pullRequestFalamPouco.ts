@@ -2,11 +2,14 @@ import { BlogPost } from "@/types/blog";
 
 export const pullRequestsFalamPouco: BlogPost = {
   slug: "pull-requests-falam-pouco",
-  title: "Quando os Pull Requests falavam pouco demais",
-  subtitle:
-    "Uma crônica sobre IA, Jira, GitHub e maturidade em desenvolvimento",
+  title: "pullRequestsFalamPouco", // Translation key
+  subtitle: "pullRequestsFalamPouco", // Translation key
   date: "2025-09-25",
   tags: ["IA", "GitHub", "Jira", "Automação", "DevTools"],
+  content: "pullRequestsFalamPouco", // Translation key
+};
+
+/* Original content for reference:
   content: `
 # Quando os Pull Requests falavam pouco demais  
 ### _Uma crônica sobre IA, Jira, GitHub e maturidade em desenvolvimento_
@@ -59,4 +62,4 @@ Foi um passo importante rumo a um processo de engenharia de software mais transp
 
 Porque, no fim das contas, todo time merece que seus PRs contem histórias completas — e não apenas frases soltas.
 `,
-};
+*/

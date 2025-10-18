@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import { Rubik_Glitch } from "next/font/google";
 import { Syne_Mono } from "next/font/google";
 import { Baumans } from "next/font/google";
+import "../i18n";
 
 const rubikGlitch = Rubik_Glitch({
   subsets: ["latin"],
