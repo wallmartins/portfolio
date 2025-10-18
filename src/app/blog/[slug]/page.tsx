@@ -7,6 +7,7 @@ import ModalManager from "@/components/Modal/ModalManager";
 import DraggableWrapper from "@/components/Draggable/DraggableWrapper";
 import BlogDetail from "@/components/BlogDetail/BlogDetail";
 import Menu from "@/components/Menu/Menu";
+import Header from "@/components/Header";
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -22,23 +23,26 @@ export default function BlogPostPage() {
   };
 
   return (
-    <div className="p-13 pb-20 font-[family-name:var(--font-geist-sans)] text-white relative">
-      <ModalManager />
-      <DraggableWrapper
-        centered
-        responsive
-        widthPercentage={90}
-        heightPercentage={80}
-        maxWidth={896}
-        minHeight={600}
-      >
-        <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4 overflow-y-scroll custom-scrollbar">
-          <div className="bg-[rgb(9,1,13)] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg">
-            <BlogDetail content={translatedPost.content} />
+    <>
+      <Header />
+      <div className="p-13 pb-20 font-[family-name:var(--font-geist-sans)] text-white relative">
+        <ModalManager />
+        <DraggableWrapper
+          centered
+          responsive
+          widthPercentage={90}
+          heightPercentage={80}
+          maxWidth={896}
+          minHeight={600}
+        >
+          <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4 overflow-y-scroll custom-scrollbar">
+            <div className="bg-[rgb(9,1,13)] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg">
+              <BlogDetail content={translatedPost.content} />
+            </div>
           </div>
-        </div>
-      </DraggableWrapper>
-      <Menu />
-    </div>
+        </DraggableWrapper>
+        <Menu />
+      </div>
+    </>
   );
 }

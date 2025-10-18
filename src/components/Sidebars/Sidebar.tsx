@@ -7,7 +7,7 @@ const Sidebar = ({ items, onItemClick }: ISidebarProps) => {
   const rightItems = items.filter((item) => item.side === "right");
 
   return (
-    <div className="flex items-center justify-between pt-10">
+    <div className="hidden lg:flex items-center justify-between pt-10">
       <div className="flex flex-col items-center justify-center gap-3">
         {leftItems.map((item) => (
           <SidebarItems

@@ -2,7 +2,7 @@ import "./globals.css";
 import DotGrid from "@/components/DotGrid";
 import NoiseOverlay from "@/components/NoiseOverlay";
 import FloatingCircles from "@/components/FloatingCircles";
-import Header from "@/components/Header";
+import { GlobalLoading } from "@/components/GlobalLoading";
 
 import { Rubik_Glitch } from "next/font/google";
 import { Syne_Mono } from "next/font/google";
@@ -47,9 +47,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="overflow-x-hidden overflow-y-hidden">
       <body
-        className={`${rubikGlitch.variable} ${syneMono.variable} ${baumans.variable}`}
+        className={`${rubikGlitch.variable} ${syneMono.variable} ${baumans.variable} overflow-x-hidden overflow-y-hidden h-screen`}
       >
         {/* Floating Circles */}
         <FloatingCircles />
@@ -60,10 +60,10 @@ export default function RootLayout({
         {/* Dot Grid Background */}
         <DotGrid />
 
-        <Header />
-
-        {/* Main Content */}
-        <div className="relative z-50">{children}</div>
+        {/* Global Loading with Content */}
+        <GlobalLoading>
+          <div className="relative z-50">{children}</div>
+        </GlobalLoading>
       </body>
     </html>
   );

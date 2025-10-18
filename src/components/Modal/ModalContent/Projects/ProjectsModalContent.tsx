@@ -21,7 +21,7 @@ const ProjectsModalContent = () => {
     },
   ];
   return (
-    <div className="w-2xl h-[512px] overflow-y-scroll custom-scrollbar">
+    <div className="w-full lg:w-2xl h-auto lg:h-[512px] overflow-y-scroll custom-scrollbar px-2 lg:px-0">
       {projects.map((project, index) => (
         <ProjectCard
           key={`projectComponent-${index}`}
