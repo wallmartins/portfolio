@@ -12,9 +12,18 @@ import enBlog from "../../public/locales/en/blog.json";
 import ptProjects from "../../public/locales/pt/projects.json";
 import enProjects from "../../public/locales/en/projects.json";
 
+const getBrowserLanguage = (): string => {
+  if (typeof navigator === "undefined") {
+    return "pt";
+  }
+
+  const browserLang = navigator.language.split("-")[0];
+  return browserLang === "en" ? "en" : "pt";
+};
+
 i18n
-  .use(LanguageDetector) // detecta idioma do navegador
-  .use(initReactI18next) // integra com react-i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources: {
       pt: {
@@ -28,9 +37,14 @@ i18n
         projects: enProjects,
       },
     },
-    fallbackLng: "pt", // idioma padrão se não achar outro
+    lng: getBrowserLanguage(),
+    fallbackLng: "pt",
+    detection: {
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
+    },
     interpolation: {
-      escapeValue: false, // React já faz escape
+      escapeValue: false,
     },
   });
 

@@ -34,13 +34,13 @@ const Menu: React.FC<MenuProps> = () => {
   ];
 
   return (
-    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#0d1220]/50 px-4 py-4 rounded-xl shadow-lg z-50">
-      <div className="flex items-center justify-center space-x-8">
+    <nav className="fixed lg:bottom-4 bottom-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 left-0 right-0 lg:w-fit w-full bg-[#0d1220]/50 px-4 py-4 lg:rounded-xl rounded-none shadow-lg z-50">
+      <div className="flex items-center justify-center gap-4 lg:gap-8">
         {navItems.map(({ icon: Icon, label, href, target }, index) => (
           <a
             key={index}
             href={href}
-            className="text-[#c0cbcd]/50 hover:text-[#c0cbcd] transition-colors duration-200 p-2 first:border-r-2 first:border-r-[#c0cbcd]/20 first:pr-8"
+            className="text-[#c0cbcd]/50 hover:text-[#c0cbcd] transition-colors duration-200 p-2 first:border-r-2 first:border-r-[#c0cbcd]/20 lg:first:pr-8 first:pr-4"
             aria-label={label}
             target={target}
           >

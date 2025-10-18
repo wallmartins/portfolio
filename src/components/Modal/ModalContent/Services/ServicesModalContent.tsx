@@ -92,7 +92,7 @@ const ServicesModalContent = () => {
   ];
 
   return (
-    <div className="w-2xl h-[512px] grid grid-cols-2 overflow-y-scroll custom-scrollbar">
+    <div className="w-full lg:w-2xl h-auto lg:h-[512px] grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-y-scroll custom-scrollbar px-2 lg:px-0">
       {services.map((service, index) => (
         <ServicesComponents
           key={`servicesComponent-${index}`}
