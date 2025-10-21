@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
 const DraggableWrapper = dynamic(() => import("@/components/Draggable/DraggableWrapper"));
 const ModalManager = dynamic(() => import("@/components/Modal/ModalManager"));
@@ -10,11 +12,60 @@ interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
+const projectMetadata: Record<string, { title: string; description: string; tags: string[] }> = {
+  "pr-ai-assistant": {
+    title: "Automatizador de PRs com IA",
+    description:
+      "Revolucionando code review com integração GitHub, Jira e Inteligência Artificial. Sistema que automatiza a geração de descrições de pull requests detalhadas.",
+    tags: ["IA", "GitHub", "Jira", "Automação", "React", "Node.js", "TypeScript"],
+  },
+};
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projectMetadata[slug];
+
+  if (!project) {
+    return {};
+  }
+
+  return generateSEOMetadata({
+    title: project.title,
+    description: project.description,
+    slug: `/projects/${slug}`,
+    type: "website",
+    tags: project.tags,
+  });
+}
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.wallm.dev";
+
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: projectMetadata[slug]?.title || "Project",
+    description: projectMetadata[slug]?.description || "",
+    creator: {
+      "@type": "Person",
+      name: "Wallace Martins",
+      url: BASE_URL,
+    },
+    applicationCategory: "DeveloperApplication",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "BRL",
+      price: "0",
+    },
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
       <ModalManager />
 
       {/* Mobile Layout */}
