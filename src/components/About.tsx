@@ -28,7 +28,8 @@ const About = () => {
         <div className="font-body text-xs lg:text-sm text-[#99a2a4] text-justify flex flex-col gap-3">
           {(() => {
             const description = t("heroDescription");
-            return Array.isArray(description) && description.map((paragraph, index) => (
+            if (!Array.isArray(description)) return null;
+            return description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ));
           })()}
