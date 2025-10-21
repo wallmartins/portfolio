@@ -2,7 +2,11 @@
   "about": "About",
   "loading": "Loading...",
   "heroTitle": "Coding Digital Realities that Revolutionize",
-  "heroDescription": "Since early on, I discovered that technology could be more than lines of code: it can transform ideas into experiences that truly impact people. I started by creating websites for schools in my hometown, and from then on, I never stopped seeking ways to combine creativity and technical skills to solve real problems. <br /> Today, I work as a developer specialized in building interfaces that not only perform efficiently but also delight users and drive business impact. My obsession with details translates into clean, intuitive, and scalable solutions that help companies grow and stand out in the digital space. <br /> I believe every project is an opportunity to tell a story – and my role is to ensure that this story is remembered, whether through the smoothness of the experience, the aesthetics, or the results it delivers. If your idea needs life, performance, and purpose, I can help make it a reality.",
+  "heroDescription": [
+    "Since early on, I discovered that technology could be more than lines of code: it can transform ideas into experiences that truly impact people. I started by creating websites for schools in my hometown, and from then on, I never stopped seeking ways to combine creativity and technical skills to solve real problems.",
+    "Today, I work as a developer specialized in building interfaces that not only perform efficiently but also delight users and drive business impact. My obsession with details translates into clean, intuitive, and scalable solutions that help companies grow and stand out in the digital space.",
+    "I believe every project is an opportunity to tell a story – and my role is to ensure that this story is remembered, whether through the smoothness of the experience, the aesthetics, or the results it delivers. If your idea needs life, performance, and purpose, I can help make it a reality."
+  ],
   "projectDemo": "Project Demo",
   "technologiesUsed": "Technologies Used",
   "challenges": "Challenges",

@@ -25,9 +25,11 @@ const About = () => {
         <h2 className="font-title text-lg lg:text-2xl text-[#c0cbcd]">
           {t("heroTitle")}
         </h2>
-        <p className="font-body text-xs lg:text-sm text-[#99a2a4] text-justify whitespace-pre-line">
-          {t("heroDescription")}
-        </p>
+        <div className="font-body text-xs lg:text-sm text-[#99a2a4] text-justify flex flex-col gap-3">
+          {Array.isArray(t("heroDescription")) && t("heroDescription").map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </div>
   );
