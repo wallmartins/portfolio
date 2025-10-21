@@ -12,8 +12,8 @@ const ServicesComponents = ({ icon, title, description }: IProps) => {
       <div className="bg-[#181d2c]/50 w-fit h-fit p-3 lg:p-4 mt-2 mb-2 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg opacity-55 first:mt-0 nth-[2]:mt-0">
         {icon}
       </div>
-      <h3 className="font-title text-sm lg:text-[16px] text-[#c0cbcd]">{title}</h3>
-      <p className="text-xs text-[#73797b] leading-5.5 font-body mb-4">
+      <h3 className="font-title text-base lg:text-[16px] text-[#c0cbcd]">{title}</h3>
+      <p className="text-sm text-[#73797b] leading-5.5 font-body mb-4">
         {description}
       </p>
     </div>
