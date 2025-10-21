@@ -129,7 +129,7 @@ const ModalManager = () => {
   const calculateSafePosition = useCallback((modal: IModalWithPosition) => {
     const modalWidth = 400; // Largura estimada do modal
     const modalHeight = 500; // Altura estimada do modal
-    const offset = 80; // Distância entre sidebar e modal
+    const offset = 60; // Distância entre sidebar e modal (1rem)
 
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
@@ -157,7 +157,7 @@ const ModalManager = () => {
     }
 
     if (x + modalWidth > viewportWidth && modal.side === "right") {
-      x = viewportWidth - modalWidth + 260;
+      x = viewportWidth - modalWidth + 200;
     }
 
     if (x < 20) {

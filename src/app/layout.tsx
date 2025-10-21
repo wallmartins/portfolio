@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GlobalLoading } from "@/components/GlobalLoading";
 import { ModalProvider } from "@/contexts/ModalContext";
 import { AppShell } from "@/components/AppShell";
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body
         className={`${rubikGlitch.variable} ${syneMono.variable} ${baumans.variable} overflow-x-hidden overflow-y-hidden h-screen`}
       >
+        <SpeedInsights />
         <I18nProvider>
           <ModalProvider>
             {/* Floating Circles */}
