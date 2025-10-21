@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.wallm.dev';
+const AUTHOR = 'Wallace Martins';
 
 interface MetadataParams {
   title: string;
@@ -9,7 +10,6 @@ interface MetadataParams {
   language?: 'pt' | 'en';
   image?: string;
   type?: 'website' | 'article';
-  author?: string;
   publishedDate?: string;
   modifiedDate?: string;
   tags?: string[];
@@ -22,7 +22,6 @@ export function generateMetadata({
   language = 'pt',
   image = `${BASE_URL}/og-image.png`,
   type = 'website',
-  author,
   publishedDate,
   modifiedDate,
   tags,
@@ -59,7 +58,7 @@ export function generateMetadata({
       },
     },
     openGraph: {
-      type: type as any,
+      type: type as 'website' | 'article',
       locale: language === 'en' ? 'en_US' : 'pt_BR',
       title: fullTitle,
       description,
@@ -76,6 +75,7 @@ export function generateMetadata({
       ],
       ...(publishedDate && { publishedTime: publishedDate }),
       ...(modifiedDate && { modifiedTime: modifiedDate }),
+      ...(type === 'article' && { authors: [AUTHOR] }),
     },
     twitter: {
       card: 'summary_large_image',
