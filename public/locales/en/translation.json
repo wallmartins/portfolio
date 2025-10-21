@@ -98,35 +98,57 @@
       "jobTitle": "Senior Software Engineer",
       "companyName": "Cielo",
       "description": "At Cielo, I worked on migrating and implementing a decommissioning system that saved 5 million, and contributed to the integration of an AI-powered chat that reduced support tickets by 70%. I also helped develop an automated system for recurring report delivery, providing more autonomy for clients, and with the team, we raised code quality to a higher standard, achieving over 90% test coverage across all projects.",
-      "location": "Barueri - SP, Brazil"
+      "location": "Barueri - SP, Brazil",
+      "techs": [
+        "React",
+        "Styled-Components",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "Storybook",
+        "Amazon Lex",
+        "MongoDB"
+      ]
     },
     {
       "experienceDate": { "startDate": "Sep 2024", "endDate": "Jan 2025" },
       "jobTitle": "Full Stack Developer",
       "companyName": "Trend Soluções em Atendimento",
       "description": "I developed configuration screens for message sending and support through Webhook and WhatsApp, as well as implemented backend infrastructure to efficiently connect systems. I also contributed to making dashboards more visual and interactive, enhancing the data analysis experience for users.",
-      "location": "Brasilia - DF, Brazil"
+      "location": "Brasilia - DF, Brazil",
+      "techs": [
+        "Vue.js",
+        "Node.js",
+        "TypeScript",
+        "Express",
+        "CSS3",
+        "NestJS",
+        "Postgresql"
+      ]
     },
     {
       "experienceDate": { "startDate": "Jun 2021", "endDate": "Nov 2024" },
       "jobTitle": "Front-End Developer",
       "companyName": "Locaweb",
       "description": "I was responsible for the frontend of the WhatsApp campaign system, which became one of the company's flagship features, increasing user engagement by 30%. I also created a flexible login system that solved registration issues and optimized platform performance, ensuring greater scalability and faster loading.",
-      "location": "São Paulo - SP, Brazil"
+      "location": "São Paulo - SP, Brazil",
+      "techs": ["Vue.js", "JavaScript", "TypeScript", "CSS3", "Node.js"]
     },
     {
       "experienceDate": { "startDate": "Jan 2021", "endDate": "Jun 2021" },
       "jobTitle": "Front-End Developer",
       "companyName": "Trampolim Project",
       "description": "At Trampolim Project, I developed a responsive website that increased the visibility of authors, structured a sustainable architecture, and implemented a functional and easy-to-maintain photo gallery.",
-      "location": "São Paulo - SP, Brazil"
+      "location": "São Paulo - SP, Brazil",
+      "techs": ["React", "JavaScript", "CSS3", "HTML"]
     },
     {
       "experienceDate": { "startDate": "May 2020", "endDate": "Dec 2023" },
       "jobTitle": "Front-End Developer",
       "companyName": "Porão Network",
       "description": "I worked on developing web and Twitch interfaces, creating responsive and interactive experiences. A highlight was implementing a Twitch-integrated game interface that increased audience interaction with the content by 60%.",
-      "location": "São Paulo - SP, Brazil"
+      "location": "São Paulo - SP, Brazil",
+      "techs": ["React", "JavaScript", "CSS3", "HTML", "Typescript"]
     }
   ],
   "projects": {
