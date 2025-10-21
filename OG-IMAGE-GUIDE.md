@@ -106,7 +106,7 @@ Aqui está um template em HTML/CSS que você pode renderizar:
     <div class="subtitle">Senior Software Engineer</div>
     <div class="description">Frontend • Fullstack • AI Solutions</div>
     <div class="badge">🚀 Transformando Ideias em Realidade Digital</div>
-    <div class="footer">wallacemartins.dev</div>
+    <div class="footer">www.wallm.dev</div>
   </div>
 </body>
 </html>
@@ -186,7 +186,7 @@ export async function GET() {
 │                                                             │
 │    🚀 Transformando Ideias em Realidade Digital            │
 │                                                             │
-│                wallacemartins.dev                          │
+│                www.wallm.dev                          │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -236,7 +236,7 @@ Depois de criada, optimize o arquivo:
 
 ## Teste Final
 
-1. Abra seu portfólio: https://wallacemartins.dev
+1. Abra seu portfólio: https://www.wallm.dev
 2. Copie a URL
 3. Acesse: https://www.opengraphcheck.com/
 4. Cole a URL

@@ -142,7 +142,7 @@ Todas as mudanças visam melhorar a visibilidade do portfólio nos buscadores (G
 1. Acesse: https://search.google.com/search-console
 2. Adicione sua propriedade (URL)
 3. Vá para Sitemaps
-4. Envie: https://wallacemartins.dev/sitemap.xml
+4. Envie: https://www.wallm.dev/sitemap.xml
 ```
 
 ### 2. **Verificar domínio no Google Search Console**
@@ -234,7 +234,7 @@ verification: {
 
 1. **NEXT_PUBLIC_BASE_URL**: Configure isso em seu `.env` local
    ```
-   NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
+   NEXT_PUBLIC_BASE_URL=https://www.wallm.dev
    ```
 
 2. **Open Graph Image**: Crie e adicione `public/og-image.jpg`

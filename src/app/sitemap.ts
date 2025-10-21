@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://wallacemartins.dev';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.wallm.dev';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

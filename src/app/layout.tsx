@@ -44,7 +44,7 @@ const baumans = Baumans({
   fallback: ["sans-serif"],
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://wallacemartins.dev";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.wallm.dev";
 
 export const metadata: Metadata = {
   title: "Wallace Martins | Senior Software Engineer",

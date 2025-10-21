@@ -130,7 +130,7 @@ Structured Data:      ✅ JSON-LD em todas as páginas
 ### Passo 1: Configuração Rápida (5 min)
 ```bash
 # Abra .env e adicione (se não existir)
-NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
+NEXT_PUBLIC_BASE_URL=https://www.wallm.dev
 
 # Salve e reinicie o servidor
 npm run dev
@@ -144,7 +144,7 @@ npm run dev
 
 ### Passo 3: Google Search Console (10 min)
 1. Acesse: https://search.google.com/search-console
-2. Adicione propriedade: `https://wallacemartins.dev`
+2. Adicione propriedade: `https://www.wallm.dev`
 3. Verifique domínio
 4. Envie sitemap: `/sitemap.xml`
 

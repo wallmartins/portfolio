@@ -5,7 +5,7 @@
 ### 1. Configurar variável de ambiente
 ```bash
 # Abra o arquivo .env e certifique-se de que tem:
-NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
+NEXT_PUBLIC_BASE_URL=https://www.wallm.dev
 ```
 
 ### 2. Criar imagem OG (Open Graph)
@@ -19,7 +19,7 @@ NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
 ### 3. Google Search Console
 1. Acesse: https://search.google.com/search-console
 2. Clique em "Adicionar propriedade"
-3. Digite: `https://wallacemartins.dev`
+3. Digite: `https://www.wallm.dev`
 4. Siga as instruções de verificação
 5. Copie o código de verificação
 6. Cole em `src/app/layout.tsx` na linha do `google` verification
@@ -27,7 +27,7 @@ NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
 ### 4. Enviar sitemap
 1. No Google Search Console
 2. Vá para **Sitemaps**
-3. Cole: `https://wallacemartins.dev/sitemap.xml`
+3. Cole: `https://www.wallm.dev/sitemap.xml`
 4. Clique em "Enviar"
 
 ---
@@ -83,7 +83,7 @@ NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
 ### Google Rich Results Test
 ```
 1. Acesse: https://search.google.com/test/rich-results
-2. Cole: https://wallacemartins.dev
+2. Cole: https://www.wallm.dev
 3. Clique em "Testar URL ao vivo"
 4. Verifique se tem "JSON-LD"
 ```
@@ -91,14 +91,14 @@ NEXT_PUBLIC_BASE_URL=https://wallacemartins.dev
 ### OG Debugger
 ```
 1. Acesse: https://www.opengraphcheck.com/
-2. Cole: https://wallacemartins.dev
+2. Cole: https://www.wallm.dev
 3. Veja como fica compartilhado no Facebook/LinkedIn
 ```
 
 ### Page Speed Insights
 ```
 1. Acesse: https://pagespeed.web.dev/
-2. Cole: https://wallacemartins.dev
+2. Cole: https://www.wallm.dev
 3. Analise Performance e SEO
 ```
 

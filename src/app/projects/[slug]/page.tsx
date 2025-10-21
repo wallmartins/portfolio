@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://wallacemartins.dev";
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.wallm.dev";
 
   const projectSchema = {
     "@context": "https://schema.org",

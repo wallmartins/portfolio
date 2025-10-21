@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://wallacemartins.dev';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.wallm.dev';
 
 interface MetadataParams {
   title: string;
