@@ -39,6 +39,8 @@ i18n
     },
     lng: getBrowserLanguage(),
     fallbackLng: "pt",
+    ns: "translation",
+    defaultNS: "translation",
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
@@ -46,6 +48,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    returnObjects: true,
   });
 
 export default i18n;
