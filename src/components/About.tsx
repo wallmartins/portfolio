@@ -10,7 +10,9 @@ const About = () => {
 
   const content = (
     <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-3 lg:p-4">
-      <p className="font-button text-[#c0cbcd] text-left text-sm drag-handle cursor-grab active:cursor-grabbing">{t("about")}</p>
+      <p className="font-button text-[#c0cbcd] text-left text-sm drag-handle cursor-grab active:cursor-grabbing">
+        {t("about")}
+      </p>
       <div className="bg-[rgb(9,1,13)] p-3 lg:p-4 mt-3 lg:mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg flex flex-col gap-2 lg:gap-4">
         <div className="w-full relative">
           <Image
@@ -55,9 +57,7 @@ const About = () => {
       </div>
 
       {/* Mobile version without dragging */}
-      <div className="lg:hidden w-full">
-        {content}
-      </div>
+      <div className="lg:hidden w-full">{content}</div>
     </>
   );
 };
