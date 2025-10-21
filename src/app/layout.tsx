@@ -1,13 +1,18 @@
 import "./globals.css";
-import DotGrid from "@/components/DotGrid";
-import NoiseOverlay from "@/components/NoiseOverlay";
-import FloatingCircles from "@/components/FloatingCircles";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { GlobalLoading } from "@/components/GlobalLoading";
+import { ModalProvider } from "@/contexts/ModalContext";
+import { AppShell } from "@/components/AppShell";
+import { I18nProvider } from "@/components/I18nProvider";
+
+const DotGrid = dynamic(() => import("@/components/DotGrid"));
+const NoiseOverlay = dynamic(() => import("@/components/NoiseOverlay"));
+const FloatingCircles = dynamic(() => import("@/components/FloatingCircles"));
 
 import { Rubik_Glitch } from "next/font/google";
 import { Syne_Mono } from "next/font/google";
 import { Baumans } from "next/font/google";
-import "../i18n";
 
 const rubikGlitch = Rubik_Glitch({
   subsets: ["latin"],
@@ -51,19 +56,27 @@ export default function RootLayout({
       <body
         className={`${rubikGlitch.variable} ${syneMono.variable} ${baumans.variable} overflow-x-hidden overflow-y-hidden h-screen`}
       >
-        {/* Floating Circles */}
-        <FloatingCircles />
+        <I18nProvider>
+          <ModalProvider>
+            {/* Floating Circles */}
+            <FloatingCircles />
 
-        {/* Animated Noise */}
-        <NoiseOverlay />
+            {/* Animated Noise */}
+            <NoiseOverlay />
 
-        {/* Dot Grid Background */}
-        <DotGrid />
+            {/* Dot Grid Background */}
+            <DotGrid />
 
-        {/* Global Loading with Content */}
-        <GlobalLoading>
-          <div className="relative z-50">{children}</div>
-        </GlobalLoading>
+            {/* App Shell with Global Loading */}
+            <AppShell>
+              <GlobalLoading>
+                <Suspense fallback={null}>
+                  <div className="relative z-50">{children}</div>
+                </Suspense>
+              </GlobalLoading>
+            </AppShell>
+          </ModalProvider>
+        </I18nProvider>
       </body>
     </html>
   );

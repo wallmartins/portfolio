@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizePackageImports: ['react-icons', 'framer-motion'],
+  },
+  compiler: {
+    removeConsole: false,
+  },
+  reactStrictMode: true,
 };
 
 export default nextConfig;

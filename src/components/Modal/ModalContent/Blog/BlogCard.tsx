@@ -13,10 +13,27 @@ const BlogCard: React.FC<BlogCardProps> = ({
   postLink,
 }) => {
   return (
-    <div className="flex flex-col lg:flex-row items-start lg:items-center cursor-pointer border-b-2 border-b-[#181d2c] pb-3 pt-3 first:pt-0 last:border-0 gap-3">
+    <div className="flex flex-col lg:flex-row items-start lg:items-center border-b-2 border-b-[#181d2c] pb-3 pt-3 first:pt-0 last:border-0 gap-3">
       {/* Content Section */}
       <div className="flex-1 w-full lg:p-4 lg:pr-3">
-        <h3 className="text-white font-title text-base lg:text-lg mb-1">{title}</h3>
+        <Link
+          href={`/blog/${postLink}`}
+          className="group"
+          prefetch={true}
+        >
+          <div className="flex items-center gap-2 mb-1 relative">
+            <h3 className="text-[#c0cbcd] font-title text-base lg:text-lg group-hover:text-[#fff] transition-colors">
+              {title}
+            </h3>
+            {/* Arrow Icon - Mobile inline with title */}
+            <div className="lg:hidden w-5 h-5 flex items-center justify-center">
+              <FiArrowRight
+                className="text-[#c0cbcd] group-hover:text-[#fff] transition-colors absolute"
+                size={20}
+              />
+            </div>
+          </div>
+        </Link>
         <p className="text-gray-400 text-xs lg:text-sm font-body leading-relaxed mb-3">
           {description}
         </p>
@@ -35,13 +52,14 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </div>
       </div>
 
-      {/* Arrow Icon */}
+      {/* Arrow Icon - Desktop as button */}
       <Link
-        className="bg-[#181d2c]/50 w-fit h-fit p-2 lg:p-3 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg opacity-55 hover:opacity-100 self-end lg:self-auto"
+        className="hidden lg:block bg-[#181d2c]/50 w-fit h-fit p-3 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg opacity-55 hover:opacity-100 transition-opacity group"
         href={`/blog/${postLink}`}
+        prefetch={true}
       >
         <FiArrowRight
-          className="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-200"
+          className="text-[#c0cbcd] group-hover:text-[#fff] group-hover:translate-x-1 transition-all duration-200"
           size={18}
         />
       </Link>

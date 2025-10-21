@@ -50,6 +50,7 @@ export default function DraggableWrapper({
   });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const dragThreshold = 5;
 
   // Hook para monitorar tamanho da janela
   useEffect(() => {
@@ -131,6 +132,8 @@ export default function DraggableWrapper({
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
 
+      e.preventDefault();
+
       // Calcular nova posição
       let newX = e.clientX - offset.x;
       let newY = e.clientY - offset.y;
@@ -153,8 +156,10 @@ export default function DraggableWrapper({
       setIsDragging(false);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+    if (isDragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -163,6 +168,20 @@ export default function DraggableWrapper({
   }, [isDragging, offset, windowSize, dimensions, responsive]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    // Apenas botão esquerdo do mouse
+    if (e.button !== 0) return;
+
+    const target = e.target as HTMLElement;
+    const isDragHandle = target.closest('.drag-handle');
+
+    if (!isDragHandle) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const startX = e.clientX;
+    const startY = e.clientY;
+
     const rect = nodeRef.current?.getBoundingClientRect();
     if (rect) {
       setOffset({
@@ -170,7 +189,24 @@ export default function DraggableWrapper({
         y: e.clientY - rect.top,
       });
     }
-    setIsDragging(true);
+
+    const handleMouseMove = (moveEvent: MouseEvent) => {
+      const deltaX = Math.abs(moveEvent.clientX - startX);
+      const deltaY = Math.abs(moveEvent.clientY - startY);
+
+      if (deltaX > dragThreshold || deltaY > dragThreshold) {
+        setIsDragging(true);
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
+    };
+
+    const handleMouseUp = () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
   };
 
   const containerStyle: React.CSSProperties = {
@@ -188,7 +224,6 @@ export default function DraggableWrapper({
       ref={nodeRef}
       onMouseDown={handleMouseDown}
       style={containerStyle}
-      className="cursor-move select-none"
     >
       {responsive ? (
         <div className="w-full h-full overflow-hidden">{children}</div>

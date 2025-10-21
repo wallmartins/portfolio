@@ -9,6 +9,7 @@ import ContactModalContent from "./ModalContent/Contact/ContactModalContent";
 import ExperienceModalContent from "./ModalContent/Experiences/ExperienceModalContent";
 import DownloadCV from "../DownloadCV";
 import About from "../About";
+import { useModal } from "@/contexts/ModalContext";
 
 type ModalType =
   | "about"
@@ -48,11 +49,17 @@ export function MobileModalManager({ currentModal }: MobileModalManagerProps) {
           className="w-full h-full flex flex-col pointer-events-auto"
         >
           {/* Modal Content */}
-          <div className="flex-1 overflow-y-auto px-4 scrollbar-thin scrollbar-thumb-[#181d2c] scrollbar-track-transparent">
+          <div className="flex-1 overflow-y-auto px-4 pt-4 scrollbar-thin scrollbar-thumb-[#181d2c] scrollbar-track-transparent">
             {currentContent}
           </div>
         </motion.div>
       </AnimatePresence>
     </div>
   );
+}
+
+export function MobileModalManagerWrapper() {
+  const { currentModal } = useModal();
+
+  return <MobileModalManager currentModal={currentModal} />;
 }
