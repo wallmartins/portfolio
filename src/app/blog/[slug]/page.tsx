@@ -3,9 +3,13 @@ import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 
 const ModalManager = dynamic(() => import("@/components/Modal/ModalManager"));
-const DraggableWrapper = dynamic(() => import("@/components/Draggable/DraggableWrapper"));
-const BlogDetailWrapper = dynamic(
-  () => import("@/components/BlogDetail/BlogDetail").then((mod) => ({ default: mod.BlogDetailWrapper }))
+const DraggableWrapper = dynamic(
+  () => import("@/components/Draggable/DraggableWrapper")
+);
+const BlogDetailWrapper = dynamic(() =>
+  import("@/components/BlogDetail/BlogDetail").then((mod) => ({
+    default: mod.BlogDetailWrapper,
+  }))
 );
 
 interface BlogPostPageProps {
@@ -43,9 +47,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         minHeight={600}
       >
         <div className="hidden lg:block w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4 overflow-y-scroll custom-scrollbar">
-          <p className="font-button text-[#c0cbcd] text-left text-sm mb-4 drag-handle cursor-grab active:cursor-grabbing">
-            {post.title}
-          </p>
           <div className="bg-[rgb(9,1,13)] p-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg">
             <BlogDetailWrapper postContentKey={post.content} />
           </div>
