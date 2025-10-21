@@ -1,6 +1,8 @@
 import { blogPosts } from "@/data/blog";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
+import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
 const ModalManager = dynamic(() => import("@/components/Modal/ModalManager"));
 const DraggableWrapper = dynamic(
@@ -16,14 +18,57 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  if (!post) {
+    return {};
+  }
+
+  return generateSEOMetadata({
+    title: post.title,
+    description: post.subtitle,
+    slug: `/blog/${slug}`,
+    type: "article",
+    publishedDate: post.date,
+    tags: post.tags,
+  });
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) return notFound();
 
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://wallacemartins.dev";
+
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.subtitle,
+    image: `${BASE_URL}/og-image.jpg`,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: "Wallace Martins",
+      url: BASE_URL,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Wallace Martins",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+      />
       <ModalManager />
 
       {/* Mobile Layout */}

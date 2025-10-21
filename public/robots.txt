@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Allow: /blog/
+Allow: /projects/
+Allow: /api/contact
+
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.next/
+
+Sitemap: https://wallacemartins.dev/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Other crawlers
+User-agent: *
+Crawl-delay: 1
