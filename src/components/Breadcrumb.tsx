@@ -14,7 +14,10 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
-  const schema = generateBreadcrumbSchema(items);
+  const schema = generateBreadcrumbSchema(items.map(item => ({
+    name: item.label,
+    url: item.url,
+  })));
 
   return (
     <>
