@@ -45,3 +45,12 @@ body::-webkit-scrollbar {
   border-radius: 6px;
   border: 2px solid #09010d;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

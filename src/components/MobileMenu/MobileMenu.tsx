@@ -10,6 +10,7 @@ import {
   FaEnvelope,
   FaFileDownload,
 } from "react-icons/fa";
+import { FiX } from "react-icons/fi";
 import LanguageToggle from "../LanguageToggle";
 
 interface MobileMenuProps {
@@ -45,7 +46,19 @@ export function MobileMenu({ isOpen, onItemClick, onClose }: MobileMenuProps) {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="lg:hidden fixed inset-0 z-[150] bg-[#0d1220]/95 backdrop-blur-xl"
         >
-          <div className="flex flex-col items-center justify-center h-full w-full p-8 gap-6">
+          <div className="flex flex-col items-center justify-center h-full w-full p-8 gap-6 relative">
+            {/* Close Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              onClick={onClose}
+              className="absolute top-6 right-6 p-3 rounded-lg bg-[#202c32]/40 backdrop-blur-sm border border-white/10 text-white hover:bg-[#202c32]/60 transition-colors"
+              aria-label="Fechar menu"
+            >
+              <FiX size={24} />
+            </motion.button>
+
             {/* Menu Items */}
             <nav className="flex flex-col items-center gap-4 w-full max-w-xs">
               {MOBILE_MENU_ITEMS.map((item, index) => {
@@ -57,10 +70,10 @@ export function MobileMenu({ isOpen, onItemClick, onClose }: MobileMenuProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => handleItemClick(item.id)}
-                    className="w-full flex items-center gap-4 p-4 rounded-lg bg-[#202c32]/40 backdrop-blur-sm border border-white/10 text-white hover:bg-[#202c32]/60 transition-colors"
+                    className="w-full flex items-center gap-4 p-4 rounded-lg bg-[#202c32]/40 backdrop-blur-sm border border-white/10 hover:bg-[#202c32]/60 transition-colors"
                   >
-                    <Icon size={24} className="text-[#2C854C]" />
-                    <span className="text-lg font-body">
+                    <Icon size={24} className="text-[#c0cbcd]/50" />
+                    <span className="text-lg font-body text-[#c0cbcd]/50">
                       {t(item.translationKey)}
                     </span>
                   </motion.button>

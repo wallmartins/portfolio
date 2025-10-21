@@ -1,67 +1,44 @@
-"use client";
+import dynamic from "next/dynamic";
 
-import DraggableWrapper from "@/components/Draggable/DraggableWrapper";
-import Menu from "@/components/Menu/Menu";
-import ModalManager from "@/components/Modal/ModalManager";
-import ProjectDetail from "@/components/ProjectDetail/ProjectDetail";
-import Header from "@/components/Header";
-import { redirect, useParams } from "next/navigation";
-import { useTranslation } from "react-i18next";
+const DraggableWrapper = dynamic(() => import("@/components/Draggable/DraggableWrapper"));
+const ModalManager = dynamic(() => import("@/components/Modal/ModalManager"));
+const ProjectDetailWrapper = dynamic(
+  () => import("@/components/ProjectDetail/ProjectDetail").then((mod) => ({ default: mod.ProjectDetailWrapper }))
+);
 
-interface Project {
-  title: string;
-  subtitle: string;
-  gif: string;
-  challenges: string[];
-  goals: string[];
-  results: string[];
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  duration?: string;
-  role?: string;
+interface ProjectPageProps {
+  params: Promise<{ slug: string }>;
 }
 
-export default function ProjectPage() {
-  const params = useParams();
-  const { t } = useTranslation();
-  const slug = params.slug as string;
-
-  const project = t(slug, {
-    returnObjects: true,
-    ns: "projects",
-  }) as Project;
-
-  if (!project || !project.title) {
-    redirect("/");
-  }
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
 
   return (
     <>
-      <Header />
-      <div className="p-13 pb-20 font-[family-name:var(--font-geist-sans)] text-white relative">
-        <ModalManager />
-        <DraggableWrapper
-          centered
-          responsive
-          widthPercentage={90}
-          heightPercentage={80}
-          maxWidth={896}
-          minHeight={600}
-        >
-          <div className="w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4 overflow-y-scroll custom-scrollbar">
-            <p className="font-button text-[#c0cbcd] text-left text-sm">
-              {project.title}
-            </p>
-            <div className="bg-[rgb(9,1,13)] p-4 mt-4 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg">
-              <div className="bg-[rgb(9,1,13)] p-4 pt-0 backdrop-blur-sm border-b border-[#181d2c]/10 shadow-xs rounded-lg">
-                <ProjectDetail project={project} />
-              </div>
-            </div>
+      <ModalManager />
+
+      {/* Mobile Layout */}
+      <div className="lg:hidden fixed inset-0 z-40 pt-16 pb-20 overflow-hidden">
+        <div className="w-full h-full flex flex-col">
+          <div className="flex-1 overflow-y-auto px-4 pt-4 scrollbar-thin scrollbar-thumb-[#181d2c] scrollbar-track-transparent">
+            <ProjectDetailWrapper slug={slug} showTitle={false} />
           </div>
-        </DraggableWrapper>
-        <Menu />
+        </div>
       </div>
+
+      {/* Desktop Layout */}
+      <DraggableWrapper
+        centered
+        responsive
+        widthPercentage={90}
+        heightPercentage={80}
+        maxWidth={896}
+        minHeight={600}
+      >
+        <div className="hidden lg:block w-full h-full bg-[#0d1220]/50 backdrop-blur-sm border border-white/5 shadow-md rounded-lg z-50 p-4 overflow-y-scroll custom-scrollbar">
+          <ProjectDetailWrapper slug={slug} showTitle={true} />
+        </div>
+      </DraggableWrapper>
     </>
   );
 }
